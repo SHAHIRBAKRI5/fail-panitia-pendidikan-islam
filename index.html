@@ -243,39 +243,48 @@
 
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
                 <!-- Folder Items -->
-                <div class="bg-white p-5 rounded-xl shadow-sm border border-slate-200 hover:border-emerald-400 transition cursor-pointer group">
-                    <div class="flex items-center justify-between mb-3">
-                        <i class="fas fa-folder text-yellow-400 text-3xl group-hover:scale-110 transition"></i>
-                        <span class="bg-emerald-100 text-emerald-700 text-xs py-1 px-2 rounded-full">Terkini</span>
-                    </div>
-                    <h3 class="font-bold text-slate-700">Minit Mesyuarat</h3>
-                    <p class="text-xs text-slate-400 mt-1">4 Fail (Bil 1 - 4)</p>
-                </div>
-                
-                <div class="bg-white p-5 rounded-xl shadow-sm border border-slate-200 hover:border-emerald-400 transition cursor-pointer group">
-                    <div class="flex items-center justify-between mb-3">
-                        <i class="fas fa-folder text-yellow-400 text-3xl group-hover:scale-110 transition"></i>
-                    </div>
-                    <h3 class="font-bold text-slate-700">Surat Panggilan</h3>
-                    <p class="text-xs text-slate-400 mt-1">Surat dalaman & luar</p>
-                </div>
+                <!-- Mula Bahagian Folder (Gaya Ikon) -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-8">
+    
+    <!-- 1. IKON MINIT MESYUARAT -->
+    <!-- Gantikan 'PASTE_LINK...' dengan link folder Google Drive -->
+    <a href="PASTE_LINK_GOOGLE_DRIVE_DI_SINI" target="_blank" class="group flex flex-col items-center p-4 rounded-2xl hover:bg-white hover:shadow-lg transition border border-transparent hover:border-slate-100 cursor-pointer">
+        <div class="w-20 h-20 bg-yellow-100 rounded-full flex items-center justify-center mb-3 shadow-sm group-hover:scale-110 group-hover:bg-yellow-200 transition duration-300">
+            <i class="fas fa-folder-open text-yellow-600 text-3xl"></i>
+        </div>
+        <h3 class="font-bold text-slate-700 text-sm text-center group-hover:text-emerald-700">Minit Mesyuarat</h3>
+        <span class="text-[10px] bg-slate-200 text-slate-600 px-2 py-0.5 rounded-full mt-1">4 Fail</span>
+    </a>
+    
+    <!-- 2. IKON SURAT PANGGILAN -->
+    <a href="PASTE_LINK_GOOGLE_DRIVE_DI_SINI" target="_blank" class="group flex flex-col items-center p-4 rounded-2xl hover:bg-white hover:shadow-lg transition border border-transparent hover:border-slate-100 cursor-pointer">
+        <div class="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center mb-3 shadow-sm group-hover:scale-110 group-hover:bg-blue-200 transition duration-300">
+            <i class="fas fa-envelope-open-text text-blue-600 text-3xl"></i>
+        </div>
+        <h3 class="font-bold text-slate-700 text-sm text-center group-hover:text-emerald-700">Surat Panggilan</h3>
+        <span class="text-[10px] text-slate-400 mt-1">Dalaman & Luar</span>
+    </a>
 
-                <div class="bg-white p-5 rounded-xl shadow-sm border border-slate-200 hover:border-emerald-400 transition cursor-pointer group">
-                    <div class="flex items-center justify-between mb-3">
-                        <i class="fas fa-folder text-yellow-400 text-3xl group-hover:scale-110 transition"></i>
-                    </div>
-                    <h3 class="font-bold text-slate-700">Kewangan Panitia</h3>
-                    <p class="text-xs text-slate-400 mt-1">PCG & Perbelanjaan</p>
-                </div>
+    <!-- 3. IKON KEWANGAN -->
+    <a href="PASTE_LINK_GOOGLE_DRIVE_DI_SINI" target="_blank" class="group flex flex-col items-center p-4 rounded-2xl hover:bg-white hover:shadow-lg transition border border-transparent hover:border-slate-100 cursor-pointer">
+        <div class="w-20 h-20 bg-emerald-100 rounded-full flex items-center justify-center mb-3 shadow-sm group-hover:scale-110 group-hover:bg-emerald-200 transition duration-300">
+            <i class="fas fa-file-invoice-dollar text-emerald-600 text-3xl"></i>
+        </div>
+        <h3 class="font-bold text-slate-700 text-sm text-center group-hover:text-emerald-700">Kewangan Panitia</h3>
+        <span class="text-[10px] text-slate-400 mt-1">Laporan PCG</span>
+    </a>
 
-                <div class="bg-white p-5 rounded-xl shadow-sm border border-slate-200 hover:border-emerald-400 transition cursor-pointer group">
-                    <div class="flex items-center justify-between mb-3">
-                        <i class="fas fa-calendar-check text-blue-500 text-3xl group-hover:scale-110 transition"></i>
-                    </div>
-                    <h3 class="font-bold text-slate-700">Takwim 2026</h3>
-                    <p class="text-xs text-slate-400 mt-1">Jadual Perancangan</p>
-                </div>
-            </div>
+    <!-- 4. IKON TAKWIM -->
+    <a href="PASTE_LINK_GOOGLE_DRIVE_DI_SINI" target="_blank" class="group flex flex-col items-center p-4 rounded-2xl hover:bg-white hover:shadow-lg transition border border-transparent hover:border-slate-100 cursor-pointer">
+        <div class="w-20 h-20 bg-red-100 rounded-full flex items-center justify-center mb-3 shadow-sm group-hover:scale-110 group-hover:bg-red-200 transition duration-300">
+            <i class="fas fa-calendar-alt text-red-600 text-3xl"></i>
+        </div>
+        <h3 class="font-bold text-slate-700 text-sm text-center group-hover:text-emerald-700">Takwim 2026</h3>
+        <span class="text-[10px] text-slate-400 mt-1">Jadual Tahunan</span>
+    </a>
+
+</div>
+<!-- Tamat Bahagian Folder -->
 
             <!-- Table Section -->
             <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
