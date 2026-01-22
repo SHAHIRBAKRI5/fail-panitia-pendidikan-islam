@@ -2,31 +2,103 @@
 <html lang="ms">
 <head>
   <meta charset="UTF-8">
-  <title>Fail Panitia Pendidikan Islam</title>
+  <title>Fail Panitia Pendidikan Islam 2026</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     body { font-family: 'Segoe UI', sans-serif; margin:0; background:#f4f6f8; }
-    header { background:#145A32; color:white; padding:20px; text-align:center; }
+    header { background:#145A32; color:white; padding:25px; text-align:center; }
     nav { background:#1E8449; display:flex; flex-wrap:wrap; justify-content:center; }
-    nav button { background:none; border:none; color:white; padding:15px 20px; cursor:pointer; font-size:16px; }
+    nav button { background:none; border:none; color:white; padding:15px 20px; cursor:pointer; font-size:15px; }
     nav button:hover { background:#117A65; }
     section { display:none; padding:20px; }
     section.active { display:block; }
     .card { background:white; padding:20px; border-radius:8px; margin-bottom:20px; box-shadow:0 2px 5px rgba(0,0,0,0.1); }
     h2 { color:#145A32; }
-    footer { text-align:center; padding:15px; background:#eaeaea; font-size:14px; }
-    input, textarea { width:100%; padding:10px; margin-top:10px; }
-    button.submit { background:#145A32; color:white; padding:10px 15px; border:none; margin-top:10px; cursor:pointer; }
+    footer { text-align:center; padding:15px; background:#eaeaea; font-size:13px; }
   </style>
 </head>
 <body>
 
 <header>
   <h1>Fail Panitia Pendidikan Islam</h1>
-  <p>Sistem Pengurusan Panitia Secara Digital</p>
+  <p><strong>SK FELDA JENGKA 16</strong> | Tahun 2026</p>
 </header>
 
 <nav>
-  <button onclick="showSection('utama')">Utama</button>
-  <button onclick="showSection('organisasi')">Organisasi</button>
-  <button onclick="showSection('dokumen')">Dokumen</button>
+  <button onclick="showSection('maklumat')">Maklumat Panitia</button>
+  <button onclick="showSection('pengurusan')">Pengurusan</button>
+  <button onclick="showSection('kurikulum')">Kurikulum</button>
+  <button onclick="showSection('aktiviti')">Aktiviti</button>
+  <button onclick="showSection('analisis')">Analisis</button>
+  <button onclick="showSection('eviden')">Eviden</button>
+</nav>
+
+<section id="maklumat" class="active">
+  <div class="card">
+    <h2>Maklumat Panitia</h2>
+    <p><strong>Nama Sekolah:</strong> SK FELDA JENGKA 16</p>
+    <p><strong>Tahun Fail:</strong> 2026</p>
+    <p><strong>Ketua Panitia:</strong> Muhammad Shahir Bin Mohamed Bakri</p>
+    <p><strong>Bilangan Ahli Panitia:</strong> 6 Orang</p>
+    <p><strong>Akaun Digital:</strong> Google DELIMa</p>
+  </div>
+</section>
+
+<section id="pengurusan">
+  <div class="card">
+    <h2>Pengurusan Panitia</h2>
+    <ul>
+      <li>Fail Induk Panitia</li>
+      <li>Carta Organisasi</li>
+      <li>Takwim Panitia</li>
+      <li>Minit Mesyuarat</li>
+    </ul>
+    <p><em>Semua dokumen disimpan dalam Google Drive (View Only)</em></p>
+  </div>
+</section>
+
+<section id="kurikulum">
+  <div class="card">
+    <h2>Kurikulum & PdP</h2>
+    <ul>
+      <li>Rancangan Pengajaran Tahunan (RPT)</li>
+      <li>Rancangan Pengajaran Harian (RPH)</li>
+      <li>Program Intervensi Murid</li>
+    </ul>
+  </div>
+</section>
+
+<section id="aktiviti">
+  <div class="card">
+    <h2>Aktiviti & Program Panitia</h2>
+    <p>Rekod aktiviti direkod menggunakan Google Form dan disimpan secara automatik.</p>
+  </div>
+</section>
+
+<section id="analisis">
+  <div class="card">
+    <h2>Analisis & Pemantauan</h2>
+    <p>Analisis pencapaian murid, refleksi guru dan laporan pemantauan panitia.</p>
+  </div>
+</section>
+
+<section id="eviden">
+  <div class="card">
+    <h2>Eviden & Dokumentasi</h2>
+    <p>Semua eviden sokongan seperti gambar, laporan dan surat disimpan dalam Google Drive.</p>
+  </div>
+</section>
+
+<footer>
+  © Panitia Pendidikan Islam SK FELDA JENGKA 16 | 2026
+</footer>
+
+<script>
+  function showSection(id) {
+    document.querySelectorAll('section').forEach(sec => sec.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+  }
+</script>
+
+</body>
+</html>
