@@ -32,6 +32,13 @@
         .fade-in { animation: fadeIn 0.5s ease-in-out; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
         .nav-active { border-bottom: 3px solid #fbbf24; color: #fbbf24; font-weight: 700; }
+        /* Garis penghubung untuk carta organisasi */
+        .org-connector {
+            width: 2px;
+            height: 20px;
+            background-color: #cbd5e1; /* slate-300 */
+            margin: 0 auto;
+        }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-800 flex flex-col min-h-screen">
@@ -81,73 +88,146 @@
     <!-- Main Content Area -->
     <main class="container mx-auto px-4 py-8 flex-grow">
 
-        <!-- Section: Maklumat Panitia -->
+        <!-- Section: Maklumat Panitia (DIKEMASKINI) -->
         <section id="maklumat" class="tab-content fade-in">
             <div class="grid md:grid-cols-3 gap-6">
-                <!-- Profile Card -->
-                <div class="md:col-span-1 bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
-                    <div class="bg-emerald-100 p-6 text-center">
-                        <div class="w-24 h-24 bg-emerald-200 rounded-full mx-auto flex items-center justify-center text-4xl text-emerald-700 mb-3 border-4 border-white shadow-sm">
-                            <i class="fas fa-user-tie"></i>
+                <!-- Visi Misi (Sidebar) -->
+                <div class="md:col-span-1 space-y-6">
+                    <!-- Profile KP -->
+                    <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
+                        <div class="bg-emerald-100 p-6 text-center">
+                            <div class="w-24 h-24 bg-emerald-200 rounded-full mx-auto flex items-center justify-center text-4xl text-emerald-700 mb-3 border-4 border-white shadow-sm">
+                                <i class="fas fa-user-tie"></i>
+                            </div>
+                            <h3 class="font-bold text-lg text-slate-800">Ketua Panitia</h3>
+                            <p class="text-slate-600 text-sm font-semibold">Ustaz Muhammad Shahir</p>
                         </div>
-                        <h3 class="font-bold text-lg text-slate-800">Ketua Panitia</h3>
-                        <p class="text-slate-600 text-sm">Ustaz Muhammad Shahir</p>
+                        <div class="p-6">
+                            <ul class="space-y-3 text-sm text-slate-600">
+                                <li class="flex justify-between border-b pb-2">
+                                    <span><i class="fas fa-school mr-2 text-emerald-600"></i>Sekolah</span>
+                                    <span class="font-semibold">SK Felda Jengka 16</span>
+                                </li>
+                                <li class="flex justify-between border-b pb-2">
+                                    <span><i class="fas fa-globe mr-2 text-emerald-600"></i>Platform</span>
+                                    <span class="font-semibold">Google DELIMa</span>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
-                    <div class="p-6">
-                        <ul class="space-y-3 text-sm text-slate-600">
-                            <li class="flex justify-between border-b pb-2">
-                                <span><i class="fas fa-users mr-2 text-emerald-600"></i>Ahli</span>
-                                <span class="font-semibold">6 Orang</span>
-                            </li>
-                            <li class="flex justify-between border-b pb-2">
-                                <span><i class="fas fa-school mr-2 text-emerald-600"></i>Sekolah</span>
-                                <span class="font-semibold">SK Felda Jengka 16</span>
-                            </li>
-                            <li class="flex justify-between border-b pb-2">
-                                <span><i class="fas fa-globe mr-2 text-emerald-600"></i>Platform</span>
-                                <span class="font-semibold">Google DELIMa</span>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
 
-                <!-- Info Cards -->
-                <div class="md:col-span-2 space-y-6">
+                    <!-- Visi Misi -->
                     <div class="bg-white rounded-xl shadow-sm border border-slate-200 p-6">
                         <h2 class="text-xl font-bold text-emerald-800 mb-4 flex items-center">
                             <i class="fas fa-bullseye mr-2"></i> Visi & Misi
                         </h2>
                         <div class="bg-slate-50 p-4 rounded-lg mb-4 border-l-4 border-emerald-500">
                             <h4 class="font-bold text-slate-800 mb-1">Visi</h4>
-                            <p class="text-slate-600">Pendidikan Berkualiti Insan Terdidik Negara Sejahtera.</p>
+                            <p class="text-slate-600 text-sm">Pendidikan Berkualiti Insan Terdidik Negara Sejahtera.</p>
                         </div>
                         <div class="bg-slate-50 p-4 rounded-lg border-l-4 border-emerald-500">
                             <h4 class="font-bold text-slate-800 mb-1">Misi</h4>
-                            <p class="text-slate-600">Melestarikan Sistem Pendidikan Yang Berkualiti Untuk Membangunkan Potensi Individu Bagi Memenuhi Aspirasi Negara.</p>
+                            <p class="text-slate-600 text-sm">Melestarikan Sistem Pendidikan Yang Berkualiti Untuk Membangunkan Potensi Individu Bagi Memenuhi Aspirasi Negara.</p>
                         </div>
                     </div>
+                </div>
 
-                    <div class="bg-white rounded-xl shadow-sm border border-slate-200 p-6">
-                        <h2 class="text-xl font-bold text-emerald-800 mb-4 flex items-center">
-                            <i class="fas fa-sitemap mr-2"></i> Carta Organisasi 2026
-                        </h2>
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                            <div class="p-3 border rounded-lg hover:shadow-md transition bg-emerald-50 border-emerald-100">
-                                <span class="text-xs text-emerald-600 font-bold uppercase">Setiausaha</span>
-                                <p class="font-semibold text-slate-700">Ustazah Siti Aminah</p>
+                <!-- Carta Organisasi (Main Content) -->
+                <div class="md:col-span-2 bg-white rounded-xl shadow-sm border border-slate-200 p-6">
+                    <h2 class="text-xl font-bold text-emerald-800 mb-6 flex items-center justify-center border-b pb-4">
+                        <i class="fas fa-sitemap mr-2"></i> CARTA ORGANISASI INDUK 2026
+                    </h2>
+
+                    <div class="flex flex-col items-center w-full">
+                        
+                        <!-- Level 1: Penasihat -->
+                        <div class="w-full max-w-sm bg-slate-800 text-white p-3 rounded-lg text-center shadow-md mb-2">
+                            <span class="text-xs text-yellow-400 font-bold uppercase block">Penasihat (Guru Besar)</span>
+                            <span class="font-semibold">Pn. Rohani binti Mohd Amin</span>
+                        </div>
+                        <div class="org-connector"></div>
+
+                        <!-- Level 2: Naib Penasihat -->
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 w-full mb-2">
+                            <div class="bg-slate-700 text-white p-3 rounded-lg text-center shadow-md">
+                                <span class="text-xs text-yellow-400 font-bold uppercase block">Naib Penasihat (PK Pentadbiran)</span>
+                                <span class="font-semibold text-sm">Hj. Auza’i bin Hj. Mahamad</span>
                             </div>
-                            <div class="p-3 border rounded-lg hover:shadow-md transition bg-emerald-50 border-emerald-100">
-                                <span class="text-xs text-emerald-600 font-bold uppercase">Bendahari</span>
-                                <p class="font-semibold text-slate-700">Ustazah Norlida</p>
+                            <div class="bg-slate-700 text-white p-3 rounded-lg text-center shadow-md">
+                                <span class="text-xs text-yellow-400 font-bold uppercase block">Naib Penasihat (PK HEM)</span>
+                                <span class="font-semibold text-sm">En. Azizulfitri bin Muslihat</span>
                             </div>
-                            <div class="p-3 border rounded-lg hover:shadow-md transition bg-white">
-                                <span class="text-xs text-slate-500 font-bold uppercase">AJK Dakwah</span>
-                                <p class="font-semibold text-slate-700">Ustaz Ahmad Kamal</p>
+                        </div>
+                        <div class="org-connector"></div>
+
+                        <!-- Level 3: Ketua Panitia -->
+                        <div class="w-full max-w-sm bg-emerald-700 text-white p-3 rounded-lg text-center shadow-md mb-2 border-2 border-emerald-500">
+                            <span class="text-xs text-emerald-200 font-bold uppercase block">Ketua Panitia</span>
+                            <span class="font-bold">En. Muhammad Shahir bin Mohamed Bakri</span>
+                        </div>
+                        <div class="org-connector"></div>
+
+                        <!-- Level 4: SU & Bendahari -->
+                        <div class="grid grid-cols-2 gap-4 w-full max-w-lg mb-6">
+                            <div class="bg-emerald-50 border border-emerald-200 p-3 rounded-lg text-center">
+                                <span class="text-xs text-emerald-600 font-bold uppercase block">Setiausaha</span>
+                                <span class="text-sm font-semibold text-slate-700 italic">Khairul Anuar bin Mat Isa</span>
                             </div>
-                            <div class="p-3 border rounded-lg hover:shadow-md transition bg-white">
-                                <span class="text-xs text-slate-500 font-bold uppercase">AJK j-QAF</span>
-                                <p class="font-semibold text-slate-700">Ustazah Faridah</p>
+                            <div class="bg-emerald-50 border border-emerald-200 p-3 rounded-lg text-center">
+                                <span class="text-xs text-emerald-600 font-bold uppercase block">Bendahari</span>
+                                <span class="text-sm font-semibold text-slate-700 italic">Mahamad Sukeran bin Awang</span>
                             </div>
+                        </div>
+
+                        <!-- Level 5: Jawatankuasa (Grid) -->
+                        <h3 class="text-center font-bold text-slate-500 text-sm mb-4 uppercase tracking-widest">----- Jawatankuasa Pelaksana -----</h3>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 w-full">
+                            
+                            <!-- AJK 1 -->
+                            <div class="bg-white border-l-4 border-emerald-500 shadow-sm p-3 rounded r-box">
+                                <div class="flex items-start">
+                                    <div class="mr-3 mt-1 text-emerald-600"><i class="fas fa-book-reader"></i></div>
+                                    <div>
+                                        <h4 class="text-xs font-bold text-slate-500 uppercase">Penyelaras JQAF</h4>
+                                        <p class="font-semibold text-slate-800 text-sm">En. Mazura binti Mohd Noor</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- AJK 2 -->
+                            <div class="bg-white border-l-4 border-emerald-500 shadow-sm p-3 rounded r-box">
+                                <div class="flex items-start">
+                                    <div class="mr-3 mt-1 text-emerald-600"><i class="fas fa-database"></i></div>
+                                    <div>
+                                        <h4 class="text-xs font-bold text-slate-500 uppercase">AJK Data & Dokumentasi</h4>
+                                        <p class="font-semibold text-slate-800 text-sm">En. Mahamad Sukeran</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- AJK 3 -->
+                            <div class="bg-white border-l-4 border-emerald-500 shadow-sm p-3 rounded r-box">
+                                <div class="flex items-start">
+                                    <div class="mr-3 mt-1 text-emerald-600"><i class="fas fa-laptop-code"></i></div>
+                                    <div>
+                                        <h4 class="text-xs font-bold text-slate-500 uppercase">SURAU</h4>
+                                        <p class="font-semibold text-slate-800 text-sm">Shahir, Anuar, Auza'i</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- AJK 4 -->
+                            <div class="bg-white border-l-4 border-emerald-500 shadow-sm p-3 rounded r-box">
+                                <div class="flex items-start">
+                                    <div class="mr-3 mt-1 text-emerald-600"><i class="fas fa-tasks"></i></div>
+                                    <div>
+                                        <h4 class="text-xs font-bold text-slate-500 uppercase">Bilik JQAF</h4>
+                                        <p class="font-semibold text-slate-800 text-sm">Sukeran, Mazura, Azizul</p>
+                                    </div>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
                 </div>
@@ -515,8 +595,7 @@
             // Reset nav buttons
             document.querySelectorAll('.nav-btn').forEach(btn => {
                 btn.classList.remove('nav-active');
-                btn.classList.remove('text-yellow-400'); // fallback/extra visual
-                btn.classList.add('text-emerald-100');
+                btn.classList.remove('text-emerald-100');
             });
 
             // Activate selected button
