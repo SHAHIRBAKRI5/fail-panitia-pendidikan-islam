@@ -2,10 +2,12 @@
 <html lang="ms">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Fail Panitia Pendidikan Islam 2026 | SK FELDA JENGKA 16</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <!-- Markdown Parser for AI response -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <script>
         tailwind.config = {
             theme: {
@@ -28,204 +30,217 @@
     </script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
-        body { font-family: 'Inter', sans-serif; }
-        .fade-in { animation: fadeIn 0.5s ease-in-out; }
+        body { font-family: 'Inter', sans-serif; -webkit-tap-highlight-color: transparent; }
+        .fade-in { animation: fadeIn 0.4s ease-in-out; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
-        .nav-active { border-bottom: 3px solid #fbbf24; color: #fbbf24; font-weight: 700; }
-        /* Garis penghubung untuk carta organisasi */
-        .org-connector {
-            width: 2px;
-            height: 20px;
-            background-color: #cbd5e1; /* slate-300 */
-            margin: 0 auto;
-        }
+        
+        /* Hide Scrollbar but allow scrolling */
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        
+        .org-connector { width: 2px; height: 20px; background-color: #cbd5e1; margin: 0 auto; }
+        .custom-scroll::-webkit-scrollbar { width: 4px; height: 4px; }
+        .custom-scroll::-webkit-scrollbar-thumb { background: #10b981; border-radius: 4px; }
+        
+        /* Mobile Nav Active State */
+        .mobile-nav-active { color: #059669; font-weight: 700; position: relative; }
+        .mobile-nav-active::after { content: ''; position: absolute; top: -12px; left: 50%; transform: translateX(-50%); width: 40px; height: 4px; background: #059669; border-radius: 0 0 4px 4px; }
+
+        /* Timeline Styles */
+        .timeline-line { position: absolute; left: 24px; top: 0; bottom: 0; width: 2px; background: #e2e8f0; z-index: 0; }
+        .timeline-item { position: relative; z-index: 10; }
+
+        /* Markdown Styles */
+        .markdown-body ul { list-style-type: disc; padding-left: 1.5rem; margin-bottom: 1rem; }
+        .markdown-body ol { list-style-type: decimal; padding-left: 1.5rem; margin-bottom: 1rem; }
+        .markdown-body p { margin-bottom: 0.75rem; }
+        .markdown-body strong { font-weight: 700; color: #065f46; }
     </style>
 </head>
-<body class="bg-slate-50 text-slate-800 flex flex-col min-h-screen">
+<body class="bg-slate-50 text-slate-800 flex flex-col min-h-screen pb-24 md:pb-0">
 
-    <!-- Header Section -->
-    <header class="bg-gradient-to-r from-emerald-900 to-emerald-700 text-white shadow-lg">
-        <div class="container mx-auto px-4 py-6 flex flex-col md:flex-row items-center justify-between">
-            <div class="flex items-center space-x-4 mb-4 md:mb-0">
-                <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center text-emerald-800 text-2xl font-bold shadow-md">
-                    <i class="fas fa-book-quran"></i>
+    <!-- Mobile Header (Sticky) with ICONS -->
+    <header class="sticky top-0 z-40 bg-gradient-to-r from-emerald-900 to-emerald-700 text-white shadow-md rounded-b-xl md:rounded-none">
+        <div class="container mx-auto px-4 py-4 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <!-- ICON LOGO SEKOLAH -->
+                <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-md border-2 border-emerald-200 text-emerald-800">
+                    <i class="fas fa-school text-2xl"></i>
                 </div>
-                <div class="text-center md:text-left">
-                    <h1 class="text-2xl md:text-3xl font-bold tracking-tight">Panitia Pendidikan Islam</h1>
-                    <p class="text-emerald-100 text-sm md:text-base">SK FELDA JENGKA 16 | Tahun 2026</p>
+                
+                <div>
+                    <h1 class="text-lg font-bold leading-tight">Panitia P.Islam</h1>
+                    <p class="text-emerald-100 text-[10px] uppercase tracking-wider font-semibold">SK Felda Jengka 16</p>
                 </div>
             </div>
-            <div class="text-xs md:text-sm bg-emerald-800 bg-opacity-50 py-2 px-4 rounded-lg border border-emerald-600">
-                <i class="fas fa-calendar-alt mr-2"></i>Sesi Akademik 2026/2027
+            
+            <!-- ICON LOGO TS25 -->
+            <div class="flex items-center">
+                <div class="bg-white rounded-lg px-2 py-1 mr-2 shadow-sm border border-emerald-600 flex items-center gap-1">
+                     <i class="fas fa-award text-yellow-500 text-lg"></i>
+                     <span class="text-xs font-bold text-emerald-900">TS25</span>
+                </div>
+                <div class="text-[10px] bg-emerald-800 bg-opacity-50 py-1 px-2 rounded border border-emerald-600 text-center">
+                    <span class="block font-bold text-yellow-300">2026</span>
+                    <span class="text-[8px]">Sesi Baru</span>
+                </div>
             </div>
         </div>
-
-        <!-- Navigation Bar -->
-        <nav class="bg-emerald-800 text-emerald-100 shadow-inner overflow-x-auto">
-            <div class="container mx-auto flex whitespace-nowrap md:justify-center">
-                <button onclick="switchTab('maklumat')" id="btn-maklumat" class="nav-btn nav-active px-6 py-4 hover:bg-emerald-700 transition flex items-center gap-2">
-                    <i class="fas fa-info-circle"></i> Maklumat
-                </button>
-                <button onclick="switchTab('pengurusan')" id="btn-pengurusan" class="nav-btn px-6 py-4 hover:bg-emerald-700 transition flex items-center gap-2">
-                    <i class="fas fa-briefcase"></i> Pengurusan
-                </button>
-                <button onclick="switchTab('kurikulum')" id="btn-kurikulum" class="nav-btn px-6 py-4 hover:bg-emerald-700 transition flex items-center gap-2">
-                    <i class="fas fa-chalkboard-teacher"></i> Kurikulum
-                </button>
-                <button onclick="switchTab('aktiviti')" id="btn-aktiviti" class="nav-btn px-6 py-4 hover:bg-emerald-700 transition flex items-center gap-2">
-                    <i class="fas fa-praying-hands"></i> Aktiviti
-                </button>
-                <button onclick="switchTab('analisis')" id="btn-analisis" class="nav-btn px-6 py-4 hover:bg-emerald-700 transition flex items-center gap-2">
-                    <i class="fas fa-chart-line"></i> Analisis
-                </button>
-                <button onclick="switchTab('eviden')" id="btn-eviden" class="nav-btn px-6 py-4 hover:bg-emerald-700 transition flex items-center gap-2">
-                    <i class="fas fa-folder-open"></i> Eviden
-                </button>
-            </div>
-        </nav>
     </header>
 
+    <!-- Desktop Navigation (Hidden on Mobile) -->
+    <nav class="hidden md:block bg-emerald-800 text-emerald-100 shadow-inner">
+        <div class="container mx-auto flex justify-center items-center">
+             <!-- Desktop Logo Area (Icons) -->
+             <div class="mr-8 flex items-center gap-3">
+                <div class="h-10 w-10 bg-white rounded-full flex items-center justify-center text-emerald-700 shadow-sm">
+                    <i class="fas fa-school"></i>
+                </div>
+                <div class="h-10 px-3 bg-white rounded flex items-center justify-center gap-1 shadow-sm">
+                    <i class="fas fa-award text-yellow-500"></i>
+                    <span class="font-bold text-emerald-900 text-sm">TS25</span>
+                </div>
+             </div>
+
+             <button onclick="switchTab('maklumat')" class="desk-nav-btn px-5 py-4 hover:bg-emerald-700 transition flex gap-2">Maklumat</button>
+             <button onclick="switchTab('pengurusan')" class="desk-nav-btn px-5 py-4 hover:bg-emerald-700 transition flex gap-2">Pengurusan</button>
+             <button onclick="switchTab('kurikulum')" class="desk-nav-btn px-5 py-4 hover:bg-emerald-700 transition flex gap-2">Kurikulum</button>
+             <button onclick="switchTab('aktiviti')" class="desk-nav-btn px-5 py-4 hover:bg-emerald-700 transition flex gap-2">Aktiviti</button>
+             <button onclick="switchTab('adni')" class="desk-nav-btn px-5 py-4 hover:bg-emerald-700 transition flex gap-2">ADNI</button>
+             <button onclick="switchTab('ai')" class="desk-nav-btn px-5 py-4 hover:bg-emerald-700 transition flex gap-2 text-yellow-300 font-bold"><i class="fas fa-sparkles"></i> AI Panitia</button>
+             <button onclick="switchTab('analisis')" class="desk-nav-btn px-5 py-4 hover:bg-emerald-700 transition flex gap-2">Analisis</button>
+             <button onclick="switchTab('eviden')" class="desk-nav-btn px-5 py-4 hover:bg-emerald-700 transition flex gap-2">Eviden</button>
+        </div>
+    </nav>
+
     <!-- Main Content Area -->
-    <main class="container mx-auto px-4 py-8 flex-grow">
+    <main class="container mx-auto px-4 py-6 flex-grow">
 
-        <!-- Section: Maklumat Panitia (DIKEMASKINI) -->
+        <!-- Section: Maklumat -->
         <section id="maklumat" class="tab-content fade-in">
-            <div class="grid md:grid-cols-3 gap-6">
-                <!-- Visi Misi (Sidebar) -->
-                <div class="md:col-span-1 space-y-6">
-                    <!-- Profile KP -->
-                    <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
-                        <div class="bg-emerald-100 p-6 text-center">
-                            <div class="w-24 h-24 bg-emerald-200 rounded-full mx-auto flex items-center justify-center text-4xl text-emerald-700 mb-3 border-4 border-white shadow-sm">
-                                <i class="fas fa-user-tie"></i>
-                            </div>
-                            <h3 class="font-bold text-lg text-slate-800">Ketua Panitia</h3>
-                            <p class="text-slate-600 text-sm font-semibold">Ustaz Muhammad Shahir</p>
-                        </div>
-                        <div class="p-6">
-                            <ul class="space-y-3 text-sm text-slate-600">
-                                <li class="flex justify-between border-b pb-2">
-                                    <span><i class="fas fa-school mr-2 text-emerald-600"></i>Sekolah</span>
-                                    <span class="font-semibold">SK Felda Jengka 16</span>
-                                </li>
-                                <li class="flex justify-between border-b pb-2">
-                                    <span><i class="fas fa-globe mr-2 text-emerald-600"></i>Platform</span>
-                                    <span class="font-semibold">Google DELIMa</span>
-                                </li>
-                            </ul>
-                        </div>
+             <div class="space-y-4">
+                <!-- Profile Card Mobile Friendly -->
+                <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden flex flex-row items-center p-4">
+                    <div class="w-16 h-16 bg-emerald-100 rounded-full flex items-center justify-center text-2xl text-emerald-700 mr-4 flex-shrink-0">
+                        <i class="fas fa-user-tie"></i>
                     </div>
-
-                    <!-- Visi Misi -->
-                    <div class="bg-white rounded-xl shadow-sm border border-slate-200 p-6">
-                        <h2 class="text-xl font-bold text-emerald-800 mb-4 flex items-center">
-                            <i class="fas fa-bullseye mr-2"></i> Visi & Misi
-                        </h2>
-                        <div class="bg-slate-50 p-4 rounded-lg mb-4 border-l-4 border-emerald-500">
-                            <h4 class="font-bold text-slate-800 mb-1">Visi</h4>
-                            <p class="text-slate-600 text-sm">Pendidikan Berkualiti Insan Terdidik Negara Sejahtera.</p>
-                        </div>
-                        <div class="bg-slate-50 p-4 rounded-lg border-l-4 border-emerald-500">
-                            <h4 class="font-bold text-slate-800 mb-1">Misi</h4>
-                            <p class="text-slate-600 text-sm">Melestarikan Sistem Pendidikan Yang Berkualiti Untuk Membangunkan Potensi Individu Bagi Memenuhi Aspirasi Negara.</p>
-                        </div>
+                    <div>
+                        <p class="text-xs text-slate-500 uppercase font-bold">Ketua Panitia</p>
+                        <h3 class="font-bold text-slate-800">Ustaz Muhammad Shahir</h3>
+                        <p class="text-xs text-emerald-600">6 Ahli Panitia</p>
                     </div>
                 </div>
 
-                <!-- Carta Organisasi (Main Content) -->
-                <div class="md:col-span-2 bg-white rounded-xl shadow-sm border border-slate-200 p-6">
-                    <h2 class="text-xl font-bold text-emerald-800 mb-6 flex items-center justify-center border-b pb-4">
-                        <i class="fas fa-sitemap mr-2"></i> CARTA ORGANISASI INDUK 2026
+                <!-- Visi Misi Compact -->
+                <div class="bg-white rounded-xl shadow-sm border border-slate-200 p-4">
+                    <h2 class="text-lg font-bold text-emerald-800 mb-3 flex items-center">
+                        <i class="fas fa-bullseye mr-2"></i> Visi & Misi
                     </h2>
+                    <div class="bg-slate-50 p-3 rounded-lg mb-2 border-l-4 border-emerald-500">
+                        <p class="text-slate-700 text-xs font-medium">"Pendidikan Berkualiti Insan Terdidik Negara Sejahtera."</p>
+                    </div>
+                    <div class="bg-slate-50 p-3 rounded-lg border-l-4 border-emerald-500">
+                        <p class="text-slate-700 text-xs font-medium">"Melestarikan Sistem Pendidikan Yang Berkualiti..."</p>
+                    </div>
+                </div>
 
-                    <div class="flex flex-col items-center w-full">
-                        
-                        <!-- Level 1: Penasihat -->
-                        <div class="w-full max-w-sm bg-slate-800 text-white p-3 rounded-lg text-center shadow-md mb-2">
-                            <span class="text-xs text-yellow-400 font-bold uppercase block">Penasihat (Guru Besar)</span>
-                            <span class="font-semibold">Pn. Rohani binti Mohd Amin</span>
-                        </div>
-                        <div class="org-connector"></div>
-
-                        <!-- Level 2: Naib Penasihat -->
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 w-full mb-2">
-                            <div class="bg-slate-700 text-white p-3 rounded-lg text-center shadow-md">
-                                <span class="text-xs text-yellow-400 font-bold uppercase block">Naib Penasihat (PK Pentadbiran)</span>
-                                <span class="font-semibold text-sm">Hj. Auza’i bin Hj. Mahamad</span>
+                <!-- Carta Organisasi Scrollable -->
+                <div class="bg-white rounded-xl shadow-sm border border-slate-200 p-4">
+                    <h2 class="text-lg font-bold text-emerald-800 mb-4 text-center">Carta Organisasi 2026</h2>
+                    <div class="overflow-x-auto pb-4 custom-scroll">
+                        <div class="min-w-[300px] flex flex-col items-center">
+                             <!-- Guru Besar -->
+                             <div class="bg-slate-800 text-white p-2 rounded text-center w-48 shadow-md text-xs mb-2">
+                                <span class="text-yellow-400 font-bold block">Guru Besar</span>
+                                Pn. Rohani Bt Mohd Amin
                             </div>
-                            <div class="bg-slate-700 text-white p-3 rounded-lg text-center shadow-md">
-                                <span class="text-xs text-yellow-400 font-bold uppercase block">Naib Penasihat (PK HEM)</span>
-                                <span class="font-semibold text-sm">En. Azizulfitri bin Muslihat</span>
-                            </div>
-                        </div>
-                        <div class="org-connector"></div>
-
-                        <!-- Level 3: Ketua Panitia -->
-                        <div class="w-full max-w-sm bg-emerald-700 text-white p-3 rounded-lg text-center shadow-md mb-2 border-2 border-emerald-500">
-                            <span class="text-xs text-emerald-200 font-bold uppercase block">Ketua Panitia</span>
-                            <span class="font-bold">En. Muhammad Shahir bin Mohamed Bakri</span>
-                        </div>
-                        <div class="org-connector"></div>
-
-                        <!-- Level 4: SU & Bendahari -->
-                        <div class="grid grid-cols-2 gap-4 w-full max-w-lg mb-6">
-                            <div class="bg-emerald-50 border border-emerald-200 p-3 rounded-lg text-center">
-                                <span class="text-xs text-emerald-600 font-bold uppercase block">Setiausaha</span>
-                                <span class="text-sm font-semibold text-slate-700 italic">Khairul Anuar bin Mat Isa</span>
-                            </div>
-                            <div class="bg-emerald-50 border border-emerald-200 p-3 rounded-lg text-center">
-                                <span class="text-xs text-emerald-600 font-bold uppercase block">Bendahari</span>
-                                <span class="text-sm font-semibold text-slate-700 italic">Mahamad Sukeran bin Awang</span>
-                            </div>
-                        </div>
-
-                        <!-- Level 5: Jawatankuasa (Grid) -->
-                        <h3 class="text-center font-bold text-slate-500 text-sm mb-4 uppercase tracking-widest">----- Jawatankuasa Pelaksana -----</h3>
-                        
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 w-full">
+                            <div class="org-connector"></div>
                             
-                            <!-- AJK 1 -->
-                            <div class="bg-white border-l-4 border-emerald-500 shadow-sm p-3 rounded r-box">
-                                <div class="flex items-start">
-                                    <div class="mr-3 mt-1 text-emerald-600"><i class="fas fa-book-reader"></i></div>
-                                    <div>
-                                        <h4 class="text-xs font-bold text-slate-500 uppercase">Penyelaras JQAF</h4>
-                                        <p class="font-semibold text-slate-800 text-sm">En. Mazura binti Mohd Noor</p>
-                                    </div>
+                            <!-- PKs -->
+                            <div class="flex gap-2 w-full justify-center mb-2">
+                                <div class="bg-slate-700 text-white p-2 rounded text-center w-36 shadow-md text-[10px]">
+                                    <span class="text-yellow-400 font-bold block">PK Pentadbiran</span>
+                                    Hj. Auza’i
+                                </div>
+                                <div class="bg-slate-700 text-white p-2 rounded text-center w-36 shadow-md text-[10px]">
+                                    <span class="text-yellow-400 font-bold block">PK HEM</span>
+                                    En. Azizulfitri
                                 </div>
                             </div>
+                            <div class="org-connector"></div>
 
-                            <!-- AJK 2 -->
-                            <div class="bg-white border-l-4 border-emerald-500 shadow-sm p-3 rounded r-box">
-                                <div class="flex items-start">
-                                    <div class="mr-3 mt-1 text-emerald-600"><i class="fas fa-database"></i></div>
-                                    <div>
-                                        <h4 class="text-xs font-bold text-slate-500 uppercase">AJK Data & Dokumentasi</h4>
-                                        <p class="font-semibold text-slate-800 text-sm">En. Mahamad Sukeran</p>
-                                    </div>
+                            <!-- KP -->
+                            <div class="bg-emerald-700 text-white p-2 rounded text-center w-52 shadow-md text-xs mb-2 border-2 border-emerald-500">
+                                <span class="text-emerald-200 font-bold block">Ketua Panitia</span>
+                                En. Muhammad Shahir
+                            </div>
+                            <div class="org-connector"></div>
+
+                            <!-- SU & Bendahari -->
+                            <div class="flex gap-2 w-full justify-center mb-4">
+                                <div class="bg-emerald-50 border border-emerald-200 p-2 rounded text-center w-36 text-[10px]">
+                                    <span class="text-emerald-600 font-bold block">Setiausaha</span>
+                                    En. Khairul Anuar
+                                </div>
+                                <div class="bg-emerald-50 border border-emerald-200 p-2 rounded text-center w-36 text-[10px]">
+                                    <span class="text-emerald-600 font-bold block">Bendahari</span>
+                                    [Nama]
                                 </div>
                             </div>
+                            
+                            <!-- JAWATANKUASA PELAKSANA (LENGKAP) -->
+                            <h3 class="text-center font-bold text-slate-500 text-[10px] mb-2 uppercase tracking-widest mt-2">----- Jawatankuasa Pelaksana -----</h3>
+                            
+                            <div class="grid grid-cols-2 gap-3 w-full max-w-lg">
+                                
+                                <!-- AJK Kurikulum -->
+                                <div class="bg-white border-l-4 border-emerald-500 shadow-sm p-2 rounded text-[10px]">
+                                    <span class="text-slate-500 font-bold block uppercase mb-1">Kurikulum & PdP</span>
+                                    <p class="font-semibold text-emerald-800 leading-tight">En. Khairul Anuar Bin Mat Isa</p>
+                                </div>
 
-                            <!-- AJK 3 -->
-                            <div class="bg-white border-l-4 border-emerald-500 shadow-sm p-3 rounded r-box">
-                                <div class="flex items-start">
-                                    <div class="mr-3 mt-1 text-emerald-600"><i class="fas fa-laptop-code"></i></div>
-                                    <div>
-                                        <h4 class="text-xs font-bold text-slate-500 uppercase">SURAU</h4>
-                                        <p class="font-semibold text-slate-800 text-sm">Shahir, Anuar, Auza'i</p>
+                                <!-- AJK eQUIP & j-QAF -->
+                                <div class="bg-white border-l-4 border-emerald-500 shadow-sm p-2 rounded text-[10px]">
+                                    <span class="text-slate-500 font-bold block uppercase mb-1">eQUIP & j-QAF</span>
+                                    <p class="font-semibold text-emerald-800 leading-tight">Pn. Mazura Binti Mohd Noor</p>
+                                </div>
+
+                                <!-- AJK ICT & Media -->
+                                <div class="bg-white border-l-4 border-emerald-500 shadow-sm p-2 rounded text-[10px]">
+                                    <span class="text-slate-500 font-bold block uppercase mb-1">ICT & Media</span>
+                                    <p class="font-semibold text-emerald-800 leading-tight">En. Azizulfitri Bin Muslihat</p>
+                                </div>
+
+                                <!-- AJK PBD -->
+                                <div class="bg-white border-l-4 border-emerald-500 shadow-sm p-2 rounded text-[10px]">
+                                    <span class="text-slate-500 font-bold block uppercase mb-1">Pentaksiran (PBD)</span>
+                                    <p class="font-semibold text-emerald-800 leading-tight">En. Muhammad Shahir</p>
+                                </div>
+                                
+                                <!-- AJK Dakwah -->
+                                <div class="bg-white border-l-4 border-emerald-500 shadow-sm p-2 rounded text-[10px] text-center col-span-2 md:col-span-1">
+                                    <span class="text-slate-500 font-bold block uppercase mb-1">Dakwah & Bina Insan</span>
+                                    <p class="font-semibold text-emerald-800 leading-tight">En. Sukeran Bin Awang</p>
+                                </div>
+
+                                <!-- AJK Surau -->
+                                <div class="bg-white border-l-4 border-emerald-500 shadow-sm p-2 rounded text-[10px] text-center col-span-2 md:col-span-1">
+                                    <span class="text-slate-500 font-bold block uppercase mb-1">Jawatankuasa Surau</span>
+                                    <p class="font-semibold text-emerald-800 leading-tight">En. Muhammad Shahir</p>
+                                    <p class="font-semibold text-emerald-800 leading-tight">En. Khairul Anuar</p>
+                                    <p class="font-semibold text-emerald-800 leading-tight">Hj. Auza’i</p>
+                                </div>
+                                
+                                <!-- AJK Bilik j-QAF -->
+                                <div class="bg-white border-l-4 border-emerald-500 shadow-sm p-2 rounded text-[10px] text-center col-span-2">
+                                    <span class="text-slate-500 font-bold block uppercase mb-1">Bilik j-QAF</span>
+                                    <div class="flex justify-center gap-2 flex-wrap">
+                                        <span class="font-semibold text-emerald-800 leading-tight">En. Sukeran</span>
+                                        <span class="font-semibold text-emerald-800 leading-tight">• Pn. Mazura</span>
+                                        <span class="font-semibold text-emerald-800 leading-tight">• En. Azizulfitri</span>
                                     </div>
                                 </div>
-                            </div>
 
-                            <!-- AJK 4 -->
-                            <div class="bg-white border-l-4 border-emerald-500 shadow-sm p-3 rounded r-box">
-                                <div class="flex items-start">
-                                    <div class="mr-3 mt-1 text-emerald-600"><i class="fas fa-tasks"></i></div>
-                                    <div>
-                                        <h4 class="text-xs font-bold text-slate-500 uppercase">Bilik JQAF</h4>
-                                        <p class="font-semibold text-slate-800 text-sm">Sukeran, Mazura, Azizul</p>
-                                    </div>
-                                </div>
                             </div>
 
                         </div>
@@ -234,453 +249,708 @@
             </div>
         </section>
 
-        <!-- Section: Pengurusan -->
+        <!-- Section: Pengurusan (LINK LENGKAP) -->
         <section id="pengurusan" class="tab-content hidden fade-in">
-            <div class="mb-6">
-                <h2 class="text-2xl font-bold text-emerald-900 mb-2">Pengurusan Fail & Mesyuarat</h2>
-                <p class="text-slate-500">Penyimpanan dokumen rasmi panitia secara digital.</p>
+            <div class="mb-4">
+                <h2 class="text-xl font-bold text-emerald-900">Pengurusan Fail</h2>
+                <p class="text-xs text-slate-500">Akses pantas ke fail digital.</p>
             </div>
-
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
-                <!-- Folder Items -->
-                <!-- Mula Bahagian Folder (Gaya Ikon) -->
-<div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-8">
-    
-    <!-- 1. IKON MINIT MESYUARAT -->
-    <!-- Gantikan 'PASTE_LINK...' dengan link folder Google Drive -->
-    <a href="PASTE_LINK_GOOGLE_DRIVE_DI_SINI" target="_blank" class="group flex flex-col items-center p-4 rounded-2xl hover:bg-white hover:shadow-lg transition border border-transparent hover:border-slate-100 cursor-pointer">
-        <div class="w-20 h-20 bg-yellow-100 rounded-full flex items-center justify-center mb-3 shadow-sm group-hover:scale-110 group-hover:bg-yellow-200 transition duration-300">
-            <i class="fas fa-folder-open text-yellow-600 text-3xl"></i>
-        </div>
-        <h3 class="font-bold text-slate-700 text-sm text-center group-hover:text-emerald-700">Minit Mesyuarat</h3>
-        <span class="text-[10px] bg-slate-200 text-slate-600 px-2 py-0.5 rounded-full mt-1">4 Fail</span>
-    </a>
-    
-    <!-- 2. IKON SURAT PANGGILAN -->
-    <a href="PASTE_LINK_GOOGLE_DRIVE_DI_SINI" target="_blank" class="group flex flex-col items-center p-4 rounded-2xl hover:bg-white hover:shadow-lg transition border border-transparent hover:border-slate-100 cursor-pointer">
-        <div class="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center mb-3 shadow-sm group-hover:scale-110 group-hover:bg-blue-200 transition duration-300">
-            <i class="fas fa-envelope-open-text text-blue-600 text-3xl"></i>
-        </div>
-        <h3 class="font-bold text-slate-700 text-sm text-center group-hover:text-emerald-700">Surat Panggilan</h3>
-        <span class="text-[10px] text-slate-400 mt-1">Dalaman & Luar</span>
-    </a>
-
-    <!-- 3. IKON KEWANGAN -->
-    <a href="PASTE_LINK_GOOGLE_DRIVE_DI_SINI" target="_blank" class="group flex flex-col items-center p-4 rounded-2xl hover:bg-white hover:shadow-lg transition border border-transparent hover:border-slate-100 cursor-pointer">
-        <div class="w-20 h-20 bg-emerald-100 rounded-full flex items-center justify-center mb-3 shadow-sm group-hover:scale-110 group-hover:bg-emerald-200 transition duration-300">
-            <i class="fas fa-file-invoice-dollar text-emerald-600 text-3xl"></i>
-        </div>
-        <h3 class="font-bold text-slate-700 text-sm text-center group-hover:text-emerald-700">Kewangan Panitia</h3>
-        <span class="text-[10px] text-slate-400 mt-1">Laporan PCG</span>
-    </a>
-
-    <!-- 4. IKON TAKWIM -->
-    <a href="PASTE_LINK_GOOGLE_DRIVE_DI_SINI" target="_blank" class="group flex flex-col items-center p-4 rounded-2xl hover:bg-white hover:shadow-lg transition border border-transparent hover:border-slate-100 cursor-pointer">
-        <div class="w-20 h-20 bg-red-100 rounded-full flex items-center justify-center mb-3 shadow-sm group-hover:scale-110 group-hover:bg-red-200 transition duration-300">
-            <i class="fas fa-calendar-alt text-red-600 text-3xl"></i>
-        </div>
-        <h3 class="font-bold text-slate-700 text-sm text-center group-hover:text-emerald-700">Takwim 2026</h3>
-        <span class="text-[10px] text-slate-400 mt-1">Jadual Tahunan</span>
-    </a>
-
-</div>
-<!-- Tamat Bahagian Folder -->
-
-            <!-- Table Section -->
-            <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
-                <div class="px-6 py-4 border-b border-slate-100 flex justify-between items-center bg-emerald-50">
-                    <h3 class="font-bold text-emerald-800">Jadual Mesyuarat 2026</h3>
-                    <button class="text-sm text-emerald-600 hover:underline">Lihat Semua</button>
-                </div>
-                <div class="overflow-x-auto">
-                    <table class="w-full text-sm text-left text-slate-600">
-                        <thead class="text-xs text-slate-500 uppercase bg-slate-50">
-                            <tr>
-                                <th scope="col" class="px-6 py-3">Bil</th>
-                                <th scope="col" class="px-6 py-3">Perkara</th>
-                                <th scope="col" class="px-6 py-3">Tarikh Cadangan</th>
-                                <th scope="col" class="px-6 py-3">Status</th>
-                                <th scope="col" class="px-6 py-3">Tindakan</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr class="bg-white border-b hover:bg-slate-50">
-                                <td class="px-6 py-4">1</td>
-                                <td class="px-6 py-4 font-medium text-slate-900">Mesyuarat Panitia Bil 1/2026</td>
-                                <td class="px-6 py-4">Mac 2026</td>
-                                <td class="px-6 py-4"><span class="bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded">Selesai</span></td>
-                                <td class="px-6 py-4"><button class="text-blue-600 hover:underline">Muat Turun</button></td>
-                            </tr>
-                            <tr class="bg-white border-b hover:bg-slate-50">
-                                <td class="px-6 py-4">2</td>
-                                <td class="px-6 py-4 font-medium text-slate-900">Mesyuarat Panitia Bil 2/2026</td>
-                                <td class="px-6 py-4">Jun 2026</td>
-                                <td class="px-6 py-4"><span class="bg-yellow-100 text-yellow-800 text-xs font-medium px-2.5 py-0.5 rounded">Dalam Perancangan</span></td>
-                                <td class="px-6 py-4">-</td>
-                            </tr>
-                             <tr class="bg-white border-b hover:bg-slate-50">
-                                <td class="px-6 py-4">3</td>
-                                <td class="px-6 py-4 font-medium text-slate-900">Mesyuarat Panitia Bil 3/2026</td>
-                                <td class="px-6 py-4">September 2026</td>
-                                <td class="px-6 py-4"><span class="bg-slate-100 text-slate-600 text-xs font-medium px-2.5 py-0.5 rounded">Belum</span></td>
-                                <td class="px-6 py-4">-</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
+            <div class="grid grid-cols-2 gap-3">
+                <!-- Minit Mesyuarat -->
+                <a href="https://drive.google.com/drive/folders/1mTKZqfpFpmeFto-6UUMQbFYLBVQpyjoX?usp=sharing" target="_blank" class="bg-white p-4 rounded-xl shadow-sm border border-slate-100 flex flex-col items-center justify-center text-center active:scale-95 transition hover:shadow-md">
+                    <div class="w-12 h-12 bg-yellow-100 rounded-full flex items-center justify-center mb-2">
+                        <i class="fas fa-folder-open text-yellow-600 text-xl"></i>
+                    </div>
+                    <span class="text-xs font-bold text-slate-700">Minit Mesyuarat</span>
+                </a>
+                
+                <!-- Surat Panggilan -->
+                <a href="https://drive.google.com/drive/folders/1d_y3WhK_9qSOaPOnyi_9I8ciMnWWKk3a?usp=sharing" target="_blank" class="bg-white p-4 rounded-xl shadow-sm border border-slate-100 flex flex-col items-center justify-center text-center active:scale-95 transition hover:shadow-md">
+                    <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-2">
+                        <i class="fas fa-envelope text-blue-600 text-xl"></i>
+                    </div>
+                    <span class="text-xs font-bold text-slate-700">Surat Panggilan</span>
+                </a>
+                
+                <!-- Kewangan -->
+                <a href="https://drive.google.com/drive/folders/1cB2lUUBpZZy_TL61dJGg7on4w6vesdeO?usp=drive_link" target="_blank" class="bg-white p-4 rounded-xl shadow-sm border border-slate-100 flex flex-col items-center justify-center text-center active:scale-95 transition hover:shadow-md">
+                    <div class="w-12 h-12 bg-emerald-100 rounded-full flex items-center justify-center mb-2">
+                        <i class="fas fa-file-invoice-dollar text-emerald-600 text-xl"></i>
+                    </div>
+                    <span class="text-xs font-bold text-slate-700">Kewangan</span>
+                </a>
+                
+                <!-- Takwim -->
+                <a href="https://bit.ly/SKJ16_Takwim2026" target="_blank" class="bg-white p-4 rounded-xl shadow-sm border border-slate-100 flex flex-col items-center justify-center text-center active:scale-95 transition hover:shadow-md">
+                    <div class="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center mb-2">
+                        <i class="fas fa-calendar-alt text-red-600 text-xl"></i>
+                    </div>
+                    <span class="text-xs font-bold text-slate-700">Takwim</span>
+                </a>
             </div>
         </section>
 
         <!-- Section: Kurikulum -->
         <section id="kurikulum" class="tab-content hidden fade-in">
-             <div class="mb-6">
-                <h2 class="text-2xl font-bold text-emerald-900 mb-2">Kurikulum & PdP</h2>
-                <p class="text-slate-500">Sumber rujukan guru dan perancangan pengajaran.</p>
+             <div class="mb-4">
+                <h2 class="text-xl font-bold text-emerald-900">Kurikulum & PdP</h2>
             </div>
-
-            <div class="grid md:grid-cols-2 gap-6">
-                <!-- RPT/RPH Section -->
-                <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-200">
-                    <h3 class="font-bold text-lg text-emerald-800 mb-4 border-b pb-2">Dokumen Standard (DSKP & RPT)</h3>
-                    <div class="space-y-3">
-                         <div class="flex items-center justify-between p-3 bg-slate-50 rounded-lg hover:bg-emerald-50 transition cursor-pointer">
-                            <div class="flex items-center gap-3">
-                                <i class="fas fa-file-pdf text-red-500 text-xl"></i>
-                                <div>
-                                    <p class="font-semibold text-sm">DSKP Pendidikan Islam Tahun 1 - 6</p>
-                                    <p class="text-xs text-slate-500">Semakan 2017</p>
-                                </div>
-                            </div>
-                            <i class="fas fa-download text-slate-400"></i>
-                        </div>
-                         <div class="flex items-center justify-between p-3 bg-slate-50 rounded-lg hover:bg-emerald-50 transition cursor-pointer">
-                            <div class="flex items-center gap-3">
-                                <i class="fas fa-file-word text-blue-600 text-xl"></i>
-                                <div>
-                                    <p class="font-semibold text-sm">RPT Pendidikan Islam 2026</p>
-                                    <p class="text-xs text-slate-500">Format Microsoft Word</p>
-                                </div>
-                            </div>
-                            <i class="fas fa-download text-slate-400"></i>
-                        </div>
-                    </div>
+            <div class="space-y-4">
+                <!-- RPT DSKP List (LINK LENGKAP) -->
+                <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
+                    <div class="p-3 bg-slate-50 border-b text-xs font-bold text-slate-500 uppercase">Dokumen Standard</div>
                     
-                    <div class="mt-6">
-                        <h4 class="font-bold text-sm text-slate-700 mb-2">Pautan Pantas E-RPH</h4>
-                        <button class="w-full bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition flex items-center justify-center gap-2">
-                            <i class="fab fa-google-drive"></i> Akses Folder RPH Guru 2026
-                        </button>
-                    </div>
+                    <!-- DSKP LINK -->
+                    <a href="https://drive.google.com/drive/folders/1dX65aCiTUiimoKOlf0HMqtV-JegW7XoA?usp=drive_link" target="_blank" class="flex items-center p-4 border-b hover:bg-slate-50">
+                        <i class="fas fa-file-pdf text-red-500 text-xl mr-4"></i>
+                        <div class="flex-1">
+                            <h4 class="text-sm font-bold text-slate-800">DSKP Pend. Islam</h4>
+                            <p class="text-[10px] text-slate-500">Folder Google Drive</p>
+                        </div>
+                        <i class="fas fa-chevron-right text-slate-300"></i>
+                    </a>
+
+                    <!-- RPT LINK -->
+                    <a href="https://drive.google.com/drive/folders/14WLSSGtZGP4EJtnuiwNqaMdNxzfqMUjJ?usp=drive_link" target="_blank" class="flex items-center p-4 hover:bg-slate-50">
+                        <i class="fas fa-file-word text-blue-600 text-xl mr-4"></i>
+                        <div class="flex-1">
+                            <h4 class="text-sm font-bold text-slate-800">RPT 2026</h4>
+                            <p class="text-[10px] text-slate-500">Folder Word (Google Drive)</p>
+                        </div>
+                        <i class="fas fa-chevron-right text-slate-300"></i>
+                    </a>
+
+                    <!-- EZ TASMIK LINK (NEW) -->
+                    <a href="https://bit.ly/SKJ16_MyTasmik" target="_blank" class="flex items-center p-4 hover:bg-slate-50 bg-emerald-50/50">
+                        <i class="fas fa-quran text-emerald-600 text-xl mr-4"></i>
+                        <div class="flex-1">
+                            <h4 class="text-sm font-bold text-emerald-800">eZ Tasmik (MyTasmik)</h4>
+                            <p class="text-[10px] text-emerald-600">Rekod Bacaan Murid</p>
+                        </div>
+                        <i class="fas fa-external-link-alt text-emerald-400"></i>
+                    </a>
                 </div>
 
-                <!-- Intervensi Card -->
-                <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-200">
-                    <h3 class="font-bold text-lg text-emerald-800 mb-4 border-b pb-2">Program Intervensi & Pemulihan</h3>
-                    <div class="flex gap-4 mb-4">
-                        <div class="flex-1 bg-orange-50 p-4 rounded-lg border border-orange-100 text-center">
-                            <span class="block text-3xl font-bold text-orange-600">12</span>
-                            <span class="text-xs text-orange-800">Murid Pemulihan Jawi</span>
+                <!-- Intervensi Stats -->
+                <div class="bg-gradient-to-r from-emerald-600 to-emerald-800 rounded-xl p-4 text-white shadow-md">
+                    <h3 class="text-sm font-bold mb-3 flex items-center"><i class="fas fa-chart-pie mr-2"></i>Data Intervensi (Riadhul Quran)</h3>
+                    <div class="grid grid-cols-3 gap-2 text-center divide-x divide-emerald-500/50">
+                        <div>
+                            <span class="text-xl font-bold block text-yellow-300">23</span>
+                            <span class="text-[9px] uppercase tracking-wide opacity-80">Murid Pemulihan</span>
                         </div>
-                        <div class="flex-1 bg-green-50 p-4 rounded-lg border border-green-100 text-center">
-                            <span class="block text-3xl font-bold text-green-600">85%</span>
-                            <span class="text-xs text-green-800">Sasaran Menguasai</span>
+                         <div>
+                            <span class="text-xl font-bold block">85%</span>
+                            <span class="text-[9px] uppercase tracking-wide opacity-80">Celik Quran (131)</span>
+                        </div>
+                         <div>
+                            <span class="text-xl font-bold block text-white">94%</span>
+                            <span class="text-[9px] uppercase tracking-wide opacity-80">Sasaran Daerah</span>
                         </div>
                     </div>
-                    
-                    <h4 class="font-bold text-sm text-slate-700 mb-2">Modul Tersedia:</h4>
-                    <ul class="list-disc list-inside text-sm text-slate-600 space-y-1">
-                        <li>Modul Bijak Jawi (Tahun 1 & 2)</li>
-                        <li>Kem Bestari Solat (Tahap 1)</li>
-                        <li>Klinik Al-Quran (Waktu Rehat)</li>
-                    </ul>
                 </div>
             </div>
         </section>
 
-        <!-- Section: Aktiviti -->
-        <!-- Mula Bahagian Aktiviti (Jadual Berkala 2026) -->
-<section id="aktiviti" class="tab-content hidden fade-in">
-    <div class="mb-6 flex flex-col md:flex-row justify-between items-end">
-        <div>
-            <h2 class="text-2xl font-bold text-emerald-900 mb-2">Aktiviti Berkala Panitia</h2>
-            <p class="text-slate-500">Jadual Bertugas Bacaan Yasin & Tazkirah Hadis 40 (Sesi 2026).</p>
-        </div>
-        <div class="mt-4 md:mt-0">
-             <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-3 py-1 rounded-full border border-emerald-200">
-                <i class="fas fa-clock mr-1"></i> Setiap Pagi Jumaat
-             </span>
-        </div>
-    </div>
-
-    <!-- Info Box: Nota Penting -->
-    <div class="bg-amber-50 border-l-4 border-amber-400 p-4 mb-6 rounded-r-lg shadow-sm flex items-start">
-        <i class="fas fa-info-circle text-amber-500 mt-1 mr-3 text-lg"></i>
-        <div>
-            <h4 class="font-bold text-amber-800 text-sm">Makluman Program</h4>
-            <p class="text-sm text-amber-900 mt-1">
-                Program merangkumi Bacaan Yasin dan Tazkirah. Tajuk tazkirah adalah berdasarkan <strong>Hadis 40</strong>, di mana nombor hadis adalah mengikut nombor minggu semasa (Contoh: Minggu 1 = Hadis 1).
-            </p>
-        </div>
-    </div>
-
-    <!-- Jadual Aktiviti (Scrollable) -->
-    <div class="bg-white rounded-xl shadow-lg border border-slate-200 overflow-hidden">
-        <div class="bg-emerald-800 text-white px-6 py-4 flex justify-between items-center">
-            <h3 class="font-bold flex items-center"><i class="fas fa-calendar-alt mr-2"></i> Jadual Bertugas 2026</h3>
-            <span class="text-xs bg-emerald-700 px-2 py-1 rounded text-emerald-100">Minggu 1 - 42</span>
-        </div>
-        
-        <!-- Container untuk Table Scroll -->
-        <div class="overflow-y-auto max-h-[500px]">
-            <table class="w-full text-sm text-left text-slate-600">
-                <thead class="text-xs text-slate-500 uppercase bg-slate-100 sticky top-0 shadow-sm z-10">
-                    <tr>
-                        <th scope="col" class="px-6 py-3 w-20 text-center">Minggu</th>
-                        <th scope="col" class="px-6 py-3">Pengisian / Tajuk</th>
-                        <th scope="col" class="px-6 py-3">Guru Bertugas</th>
-                    </tr>
-                </thead>
-                <tbody class="divide-y divide-slate-100">
-                    
-                    <!-- Kitaran 1 (Minggu 1-5) -->
-                    <tr class="bg-emerald-50/50 hover:bg-emerald-50 transition"><td class="px-6 py-3 text-center font-bold text-emerald-700">1</td><td class="px-6 py-3"><span class="bg-blue-100 text-blue-800 text-xs font-bold px-2 py-0.5 rounded">Hadis 1</span></td><td class="px-6 py-3 font-medium text-slate-800">En. Muhammad Shahir Bin Mohamed Bakri</td></tr>
-                    <tr class="hover:bg-slate-50 transition"><td class="px-6 py-3 text-center font-bold text-slate-500">2</td><td class="px-6 py-3"><span class="bg-blue-100 text-blue-800 text-xs font-bold px-2 py-0.5 rounded">Hadis 2</span></td><td class="px-6 py-3 font-medium text-slate-800">En. Khairul Anuar Bin Mat Isa</td></tr>
-                    <tr class="hover:bg-slate-50 transition"><td class="px-6 py-3 text-center font-bold text-slate-500">3</td><td class="px-6 py-3"><span class="bg-blue-100 text-blue-800 text-xs font-bold px-2 py-0.5 rounded">Hadis 3</span></td><td class="px-6 py-3 font-medium text-slate-800">En. Sukeran Bin Awang</td></tr>
-                    <tr class="hover:bg-slate-50 transition"><td class="px-6 py-3 text-center font-bold text-slate-500">4</td><td class="px-6 py-3"><span class="bg-blue-100 text-blue-800 text-xs font-bold px-2 py-0.5 rounded">Hadis 4</span></td><td class="px-6 py-3 font-medium text-slate-800">Pn. Mazura Binti Mohd Nor</td></tr>
-                    <tr class="bg-slate-50 hover:bg-slate-100 transition border-b-2 border-slate-200"><td class="px-6 py-3 text-center font-bold text-slate-500">5</td><td class="px-6 py-3"><span class="bg-blue-100 text-blue-800 text-xs font-bold px-2 py-0.5 rounded">Hadis 5</span></td><td class="px-6 py-3 font-medium text-slate-800">En. Azizulfitri Bin Muslihat</td></tr>
-
-                    <!-- Kitaran 2 (Minggu 6-10) -->
-                    <tr class="bg-emerald-50/50 hover:bg-emerald-50 transition"><td class="px-6 py-3 text-center font-bold text-emerald-700">6</td><td class="px-6 py-3"><span class="bg-blue-100 text-blue-800 text-xs font-bold px-2 py-0.5 rounded">Hadis 6</span></td><td class="px-6 py-3 font-medium text-slate-800">En. Muhammad Shahir Bin Mohamed Bakri</td></tr>
-                    <tr class="hover:bg-slate-50 transition"><td class="px-6 py-3 text-center font-bold text-slate-500">7</td><td class="px-6 py-3"><span class="bg-blue-100 text-blue-800 text-xs font-bold px-2 py-0.5 rounded">Hadis 7</span></td><td class="px-6 py-3 font-medium text-slate-800">En. Khairul Anuar Bin Mat Isa</td></tr>
-                    <tr class="hover:bg-slate-50 transition"><td class="px-6 py-3 text-center font-bold text-slate-500">8</td><td class="px-6 py-3"><span class="bg-blue-100 text-blue-800 text-xs font-bold px-2 py-0.5 rounded">Hadis 8</span></td><td class="px-6 py-3 font-medium text-slate-800">En. Sukeran Bin Awang</td></tr>
-                    <tr class="hover:bg-slate-50 transition"><td class="px-6 py-3 text-center font-bold text-slate-500">9</td><td class="px-6 py-3"><span class="bg-blue-100 text-blue-800 text-xs font-bold px-2 py-0.5 rounded">Hadis 9</span></td><td class="px-6 py-3 font-medium text-slate-800">Pn. Mazura Binti Mohd Nor</td></tr>
-                    <tr class="bg-slate-50 hover:bg-slate-100 transition border-b-2 border-slate-200"><td class="px-6 py-3 text-center font-bold text-slate-500">10</td><td class="px-6 py-3"><span class="bg-blue-100 text-blue-800 text-xs font-bold px-2 py-0.5 rounded">Hadis 10</span></td><td class="px-6 py-3 font-medium text-slate-800">Tuan Haji Auza’i Bin Haji Mahamad</td></tr>
-
-                    <!-- Kitaran 3 (Minggu 11-15) -->
-                    <tr class="bg-emerald-50/50 hover:bg-emerald-50 transition"><td class="px-6 py-3 text-center font-bold text-emerald-700">11</td><td class="px-6 py-3"><span class="bg-blue-100 text-blue-800 text-xs font-bold px-2 py-0.5 rounded">Hadis 11</span></td><td class="px-6 py-3 font-medium text-slate-800">En. Muhammad Shahir Bin Mohamed Bakri</td></tr>
-                    <tr class="hover:bg-slate-50 transition"><td class="px-6 py-3 text-center font-bold text-slate-500">12</td><td class="px-6 py-3"><span class="bg-blue-100 text-blue-800 text-xs font-bold px-2 py-0.5 rounded">Hadis 12</span></td><td class="px-6 py-3 font-medium text-slate-800">En. Khairul Anuar Bin Mat Isa</td></tr>
-                    <tr class="hover:bg-slate-50 transition"><td class="px-6 py-3 text-center font-bold text-slate-500">13</td><td class="px-6 py-3"><span class="bg-blue-100 text-blue-800 text-xs font-bold px-2 py-0.5 rounded">Hadis 13</span></td><td class="px-6 py-3 font-medium text-slate-800">En. Sukeran Bin Awang</td></tr>
-                    <tr class="hover:bg-slate-50 transition"><td class="px-6 py-3 text-center font-bold text-slate-500">14</td><td class="px-6 py-3"><span class="bg-blue-100 text-blue-800 text-xs font-bold px-2 py-0.5 rounded">Hadis 14</span></td><td class="px-6 py-3 font-medium text-slate-800">Pn. Mazura Binti Mohd Nor</td></tr>
-                    <tr class="bg-slate-50 hover:bg-slate-100 transition border-b-2 border-slate-200"><td class="px-6 py-3 text-center font-bold text-slate-500">15</td><td class="px-6 py-3"><span class="bg-blue-100 text-blue-800 text-xs font-bold px-2 py-0.5 rounded">Hadis 15</span></td><td class="px-6 py-3 font-medium text-slate-800">En. Azizulfitri Bin Muslihat</td></tr>
-
-                    <!-- Kitaran 4 (Minggu 16-20) -->
-                    <tr class="bg-emerald-50/50 hover:bg-emerald-50 transition"><td class="px-6 py-3 text-center font-bold text-emerald-700">16</td><td class="px-6 py-3"><span class="bg-blue-100 text-blue-800 text-xs font-bold px-2 py-0.5 rounded">Hadis 16</span></td><td class="px-6 py-3 font-medium text-slate-800">En. Muhammad Shahir Bin Mohamed Bakri</td></tr>
-                    <tr class="hover:bg-slate-50 transition"><td class="px-6 py-3 text-center font-bold text-slate-500">17</td><td class="px-6 py-3"><span class="bg-blue-100 text-blue-800 text-xs font-bold px-2 py-0.5 rounded">Hadis 17</span></td><td class="px-6 py-3 font-medium text-slate-800">En. Khairul Anuar Bin Mat Isa</td></tr>
-                    <tr class="hover:bg-slate-50 transition"><td class="px-6 py-3 text-center font-bold text-slate-500">18</td><td class="px-6 py-3"><span class="bg-blue-100 text-blue-800 text-xs font-bold px-2 py-0.5 rounded">Hadis 18</span></td><td class="px-6 py-3 font-medium text-slate-800">En. Sukeran Bin Awang</td></tr>
-                    <tr class="hover:bg-slate-50 transition"><td class="px-6 py-3 text-center font-bold text-slate-500">19</td><td class="px-6 py-3"><span class="bg-blue-100 text-blue-800 text-xs font-bold px-2 py-0.5 rounded">Hadis 19</span></td><td class="px-6 py-3 font-medium text-slate-800">Pn. Mazura Binti Mohd Nor</td></tr>
-                    <tr class="bg-slate-50 hover:bg-slate-100 transition border-b-2 border-slate-200"><td class="px-6 py-3 text-center font-bold text-slate-500">20</td><td class="px-6 py-3"><span class="bg-blue-100 text-blue-800 text-xs font-bold px-2 py-0.5 rounded">Hadis 20</span></td><td class="px-6 py-3 font-medium text-slate-800">Tuan Haji Auza’i Bin Haji Mahamad</td></tr>
-
-                    <!-- Kitaran 5 (Minggu 21-25) -->
-                    <tr class="bg-emerald-50/50 hover:bg-emerald-50 transition"><td class="px-6 py-3 text-center font-bold text-emerald-700">21</td><td class="px-6 py-3"><span class="bg-blue-100 text-blue-800 text-xs font-bold px-2 py-0.5 rounded">Hadis 21</span></td><td class="px-6 py-3 font-medium text-slate-800">En. Muhammad Shahir Bin Mohamed Bakri</td></tr>
-                    <tr class="hover:bg-slate-50 transition"><td class="px-6 py-3 text-center font-bold text-slate-500">22</td><td class="px-6 py-3"><span class="bg-blue-100 text-blue-800 text-xs font-bold px-2 py-0.5 rounded">Hadis 22</span></td><td class="px-6 py-3 font-medium text-slate-800">En. Khairul Anuar Bin Mat Isa</td></tr>
-                    <tr class="hover:bg-slate-50 transition"><td class="px-6 py-3 text-center font-bold text-slate-500">23</td><td class="px-6 py-3"><span class="bg-blue-100 text-blue-800 text-xs font-bold px-2 py-0.5 rounded">Hadis 23</span></td><td class="px-6 py-3 font-medium text-slate-800">En. Sukeran Bin Awang</td></tr>
-                    <tr class="hover:bg-slate-50 transition"><td class="px-6 py-3 text-center font-bold text-slate-500">24</td><td class="px-6 py-3"><span class="bg-blue-100 text-blue-800 text-xs font-bold px-2 py-0.5 rounded">Hadis 24</span></td><td class="px-6 py-3 font-medium text-slate-800">Pn. Mazura Binti Mohd Nor</td></tr>
-                    <tr class="bg-slate-50 hover:bg-slate-100 transition border-b-2 border-slate-200"><td class="px-6 py-3 text-center font-bold text-slate-500">25</td><td class="px-6 py-3"><span class="bg-blue-100 text-blue-800 text-xs font-bold px-2 py-0.5 rounded">Hadis 25</span></td><td class="px-6 py-3 font-medium text-slate-800">En. Azizulfitri Bin Muslihat</td></tr>
-
-                    <!-- Kitaran 6 (Minggu 26-30) -->
-                    <tr class="bg-emerald-50/50 hover:bg-emerald-50 transition"><td class="px-6 py-3 text-center font-bold text-emerald-700">26</td><td class="px-6 py-3"><span class="bg-blue-100 text-blue-800 text-xs font-bold px-2 py-0.5 rounded">Hadis 26</span></td><td class="px-6 py-3 font-medium text-slate-800">En. Muhammad Shahir Bin Mohamed Bakri</td></tr>
-                    <tr class="hover:bg-slate-50 transition"><td class="px-6 py-3 text-center font-bold text-slate-500">27</td><td class="px-6 py-3"><span class="bg-blue-100 text-blue-800 text-xs font-bold px-2 py-0.5 rounded">Hadis 27</span></td><td class="px-6 py-3 font-medium text-slate-800">En. Khairul Anuar Bin Mat Isa</td></tr>
-                    <tr class="hover:bg-slate-50 transition"><td class="px-6 py-3 text-center font-bold text-slate-500">28</td><td class="px-6 py-3"><span class="bg-blue-100 text-blue-800 text-xs font-bold px-2 py-0.5 rounded">Hadis 28</span></td><td class="px-6 py-3 font-medium text-slate-800">En. Sukeran Bin Awang</td></tr>
-                    <tr class="hover:bg-slate-50 transition"><td class="px-6 py-3 text-center font-bold text-slate-500">29</td><td class="px-6 py-3"><span class="bg-blue-100 text-blue-800 text-xs font-bold px-2 py-0.5 rounded">Hadis 29</span></td><td class="px-6 py-3 font-medium text-slate-800">Pn. Mazura Binti Mohd Nor</td></tr>
-                    <tr class="bg-slate-50 hover:bg-slate-100 transition border-b-2 border-slate-200"><td class="px-6 py-3 text-center font-bold text-slate-500">30</td><td class="px-6 py-3"><span class="bg-blue-100 text-blue-800 text-xs font-bold px-2 py-0.5 rounded">Hadis 30</span></td><td class="px-6 py-3 font-medium text-slate-800">Tuan Haji Auza’i Bin Haji Mahamad</td></tr>
-
-                    <!-- Kitaran 7 (Minggu 31-35) -->
-                    <tr class="bg-emerald-50/50 hover:bg-emerald-50 transition"><td class="px-6 py-3 text-center font-bold text-emerald-700">31</td><td class="px-6 py-3"><span class="bg-blue-100 text-blue-800 text-xs font-bold px-2 py-0.5 rounded">Hadis 31</span></td><td class="px-6 py-3 font-medium text-slate-800">En. Muhammad Shahir Bin Mohamed Bakri</td></tr>
-                    <tr class="hover:bg-slate-50 transition"><td class="px-6 py-3 text-center font-bold text-slate-500">32</td><td class="px-6 py-3"><span class="bg-blue-100 text-blue-800 text-xs font-bold px-2 py-0.5 rounded">Hadis 32</span></td><td class="px-6 py-3 font-medium text-slate-800">En. Khairul Anuar Bin Mat Isa</td></tr>
-                    <tr class="hover:bg-slate-50 transition"><td class="px-6 py-3 text-center font-bold text-slate-500">33</td><td class="px-6 py-3"><span class="bg-blue-100 text-blue-800 text-xs font-bold px-2 py-0.5 rounded">Hadis 33</span></td><td class="px-6 py-3 font-medium text-slate-800">En. Sukeran Bin Awang</td></tr>
-                    <tr class="hover:bg-slate-50 transition"><td class="px-6 py-3 text-center font-bold text-slate-500">34</td><td class="px-6 py-3"><span class="bg-blue-100 text-blue-800 text-xs font-bold px-2 py-0.5 rounded">Hadis 34</span></td><td class="px-6 py-3 font-medium text-slate-800">Pn. Mazura Binti Mohd Nor</td></tr>
-                    <tr class="bg-slate-50 hover:bg-slate-100 transition border-b-2 border-slate-200"><td class="px-6 py-3 text-center font-bold text-slate-500">35</td><td class="px-6 py-3"><span class="bg-blue-100 text-blue-800 text-xs font-bold px-2 py-0.5 rounded">Hadis 35</span></td><td class="px-6 py-3 font-medium text-slate-800">En. Azizulfitri Bin Muslihat</td></tr>
-
-                    <!-- Kitaran 8 (Minggu 36-40) -->
-                    <tr class="bg-emerald-50/50 hover:bg-emerald-50 transition"><td class="px-6 py-3 text-center font-bold text-emerald-700">36</td><td class="px-6 py-3"><span class="bg-blue-100 text-blue-800 text-xs font-bold px-2 py-0.5 rounded">Hadis 36</span></td><td class="px-6 py-3 font-medium text-slate-800">En. Muhammad Shahir Bin Mohamed Bakri</td></tr>
-                    <tr class="hover:bg-slate-50 transition"><td class="px-6 py-3 text-center font-bold text-slate-500">37</td><td class="px-6 py-3"><span class="bg-blue-100 text-blue-800 text-xs font-bold px-2 py-0.5 rounded">Hadis 37</span></td><td class="px-6 py-3 font-medium text-slate-800">En. Khairul Anuar Bin Mat Isa</td></tr>
-                    <tr class="hover:bg-slate-50 transition"><td class="px-6 py-3 text-center font-bold text-slate-500">38</td><td class="px-6 py-3"><span class="bg-blue-100 text-blue-800 text-xs font-bold px-2 py-0.5 rounded">Hadis 38</span></td><td class="px-6 py-3 font-medium text-slate-800">En. Sukeran Bin Awang</td></tr>
-                    <tr class="hover:bg-slate-50 transition"><td class="px-6 py-3 text-center font-bold text-slate-500">39</td><td class="px-6 py-3"><span class="bg-blue-100 text-blue-800 text-xs font-bold px-2 py-0.5 rounded">Hadis 39</span></td><td class="px-6 py-3 font-medium text-slate-800">Pn. Mazura Binti Mohd Nor</td></tr>
-                    <tr class="bg-slate-50 hover:bg-slate-100 transition border-b-2 border-slate-200"><td class="px-6 py-3 text-center font-bold text-slate-500">40</td><td class="px-6 py-3"><span class="bg-blue-100 text-blue-800 text-xs font-bold px-2 py-0.5 rounded">Hadis 40</span></td><td class="px-6 py-3 font-medium text-slate-800">Tuan Haji Auza’i Bin Haji Mahamad</td></tr>
-
-                     <!-- Baki (Minggu 41-42) -->
-                    <tr class="bg-emerald-50/50 hover:bg-emerald-50 transition"><td class="px-6 py-3 text-center font-bold text-emerald-700">41</td><td class="px-6 py-3"><span class="bg-blue-100 text-blue-800 text-xs font-bold px-2 py-0.5 rounded">Hadis 41</span></td><td class="px-6 py-3 font-medium text-slate-800">En. Muhammad Shahir Bin Mohamed Bakri</td></tr>
-                    <tr class="hover:bg-slate-50 transition"><td class="px-6 py-3 text-center font-bold text-slate-500">42</td><td class="px-6 py-3"><span class="bg-blue-100 text-blue-800 text-xs font-bold px-2 py-0.5 rounded">Hadis 42</span></td><td class="px-6 py-3 font-medium text-slate-800">En. Khairul Anuar Bin Mat Isa</td></tr>
-
-                </tbody>
-            </table>
-        </div>
-    </div>
-    <!-- Bahagian Pengesahan -->
-    <div class="mt-8 grid md:grid-cols-2 gap-8">
-        <div class="bg-white p-6 rounded-lg border border-slate-200 text-center">
-            <p class="text-xs text-slate-500 uppercase mb-8">Disediakan Oleh:</p>
-            <p class="font-bold text-slate-800 border-b border-slate-300 pb-1 inline-block min-w-[200px]">En. Khairul Anuar Bin Mat Isa</p>
-            <p class="text-xs text-slate-500 mt-2">Setiausaha Panitia Pendidikan Islam</p>
-        </div>
-        <div class="bg-white p-6 rounded-lg border border-slate-200 text-center">
-            <p class="text-xs text-slate-500 uppercase mb-8">Disahkan Oleh:</p>
-            <p class="font-bold text-slate-800 border-b border-slate-300 pb-1 inline-block min-w-[200px]">En. Muhammad Shahir Bin Mohamed Bakri</p>
-            <p class="text-xs text-slate-500 mt-2">Ketua Panitia Pendidikan Islam</p>
-        </div>
-    </div>
-</section>
-<!-- Tamat Bahagian Aktiviti -->
-        <!-- Section: Analisis -->
-        <section id="analisis" class="tab-content hidden fade-in">
-             <div class="mb-6">
-                <h2 class="text-2xl font-bold text-emerald-900 mb-2">Analisis Peperiksaan & PBD</h2>
-                <p class="text-slate-500">Data pencapaian murid Tahun 1 hingga Tahun 6.</p>
+        <!-- Section: Aktiviti (DIKEMASKINI DENGAN TAKWIM) -->
+        <section id="aktiviti" class="tab-content hidden fade-in">
+            <div class="mb-4">
+                <h2 class="text-xl font-bold text-emerald-900">Aktiviti & Takwim</h2>
+                <div class="flex gap-2 mt-2">
+                     <span class="bg-green-100 text-green-800 text-[10px] font-bold px-2 py-1 rounded">Yasin</span>
+                     <span class="bg-blue-100 text-blue-800 text-[10px] font-bold px-2 py-1 rounded">Hadis</span>
+                </div>
             </div>
 
-            <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-200 mb-6">
-                <h3 class="font-bold text-lg text-slate-800 mb-6">Pencapaian PBD Akhir Tahun 2025 (Baseline)</h3>
+            <!-- Jadual Bertugas Mingguan (FULL TABLE SCROLLABLE) -->
+            <h3 class="text-sm font-bold text-slate-700 mb-3 border-l-4 border-emerald-500 pl-2">Jadual Bertugas Jumaat (Penuh)</h3>
+            <div class="bg-white rounded-lg shadow-sm border border-slate-200 overflow-hidden mb-6">
+                <div class="overflow-y-auto max-h-[300px] custom-scroll">
+                    <table class="w-full text-[10px] text-left text-slate-600">
+                        <thead class="text-[9px] text-slate-500 uppercase bg-slate-100 sticky top-0 shadow-sm z-10">
+                            <tr>
+                                <th class="px-3 py-2 w-10 text-center">M</th>
+                                <th class="px-3 py-2">Guru Bertugas</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-100">
+                            <tr class="bg-green-50/50"><td class="px-3 py-2 text-center font-bold">1</td><td class="px-3 py-2">En. Muhammad Shahir Bin Mohamed Bakri</td></tr>
+                            <tr class="bg-white"><td class="px-3 py-2 text-center font-bold">2</td><td class="px-3 py-2">En. Khairul Anuar Bin Mat Isa</td></tr>
+                            <tr class="bg-green-50/50"><td class="px-3 py-2 text-center font-bold">3</td><td class="px-3 py-2">En. Sukeran Bin Awang</td></tr>
+                            <tr class="bg-white"><td class="px-3 py-2 text-center font-bold">4</td><td class="px-3 py-2">Pn. Mazura Binti Mohd Nor</td></tr>
+                            <tr class="bg-green-50/50"><td class="px-3 py-2 text-center font-bold">5</td><td class="px-3 py-2">En. Azizulfitri Bin Muslihat</td></tr>
+                            <tr class="bg-white"><td class="px-3 py-2 text-center font-bold">6</td><td class="px-3 py-2">En. Muhammad Shahir Bin Mohamed Bakri</td></tr>
+                            <tr class="bg-green-50/50"><td class="px-3 py-2 text-center font-bold">7</td><td class="px-3 py-2">En. Khairul Anuar Bin Mat Isa</td></tr>
+                            <tr class="bg-white"><td class="px-3 py-2 text-center font-bold">8</td><td class="px-3 py-2">En. Sukeran Bin Awang</td></tr>
+                            <tr class="bg-green-50/50"><td class="px-3 py-2 text-center font-bold">9</td><td class="px-3 py-2">Pn. Mazura Binti Mohd Nor</td></tr>
+                            <tr class="bg-white"><td class="px-3 py-2 text-center font-bold">10</td><td class="px-3 py-2">Tuan Haji Auza’i Bin Haji Mahamad</td></tr>
+                            <tr class="bg-green-50/50"><td class="px-3 py-2 text-center font-bold">11</td><td class="px-3 py-2">En. Muhammad Shahir Bin Mohamed Bakri</td></tr>
+                            <tr class="bg-white"><td class="px-3 py-2 text-center font-bold">12</td><td class="px-3 py-2">En. Khairul Anuar Bin Mat Isa</td></tr>
+                            <tr class="bg-green-50/50"><td class="px-3 py-2 text-center font-bold">13</td><td class="px-3 py-2">En. Sukeran Bin Awang</td></tr>
+                            <tr class="bg-white"><td class="px-3 py-2 text-center font-bold">14</td><td class="px-3 py-2">Pn. Mazura Binti Mohd Nor</td></tr>
+                            <tr class="bg-green-50/50"><td class="px-3 py-2 text-center font-bold">15</td><td class="px-3 py-2">En. Azizulfitri Bin Muslihat</td></tr>
+                            <tr class="bg-white"><td class="px-3 py-2 text-center font-bold">16</td><td class="px-3 py-2">En. Muhammad Shahir Bin Mohamed Bakri</td></tr>
+                            <tr class="bg-green-50/50"><td class="px-3 py-2 text-center font-bold">17</td><td class="px-3 py-2">En. Khairul Anuar Bin Mat Isa</td></tr>
+                            <tr class="bg-white"><td class="px-3 py-2 text-center font-bold">18</td><td class="px-3 py-2">En. Sukeran Bin Awang</td></tr>
+                            <tr class="bg-green-50/50"><td class="px-3 py-2 text-center font-bold">19</td><td class="px-3 py-2">Pn. Mazura Binti Mohd Nor</td></tr>
+                            <tr class="bg-white"><td class="px-3 py-2 text-center font-bold">20</td><td class="px-3 py-2">Tuan Haji Auza’i Bin Haji Mahamad</td></tr>
+                            <tr class="bg-green-50/50"><td class="px-3 py-2 text-center font-bold">21</td><td class="px-3 py-2">En. Muhammad Shahir Bin Mohamed Bakri</td></tr>
+                            <tr class="bg-white"><td class="px-3 py-2 text-center font-bold">22</td><td class="px-3 py-2">En. Khairul Anuar Bin Mat Isa</td></tr>
+                            <tr class="bg-green-50/50"><td class="px-3 py-2 text-center font-bold">23</td><td class="px-3 py-2">En. Sukeran Bin Awang</td></tr>
+                            <tr class="bg-white"><td class="px-3 py-2 text-center font-bold">24</td><td class="px-3 py-2">Pn. Mazura Binti Mohd Nor</td></tr>
+                            <tr class="bg-green-50/50"><td class="px-3 py-2 text-center font-bold">25</td><td class="px-3 py-2">En. Azizulfitri Bin Muslihat</td></tr>
+                            <tr class="bg-white"><td class="px-3 py-2 text-center font-bold">26</td><td class="px-3 py-2">En. Muhammad Shahir Bin Mohamed Bakri</td></tr>
+                            <tr class="bg-green-50/50"><td class="px-3 py-2 text-center font-bold">27</td><td class="px-3 py-2">En. Khairul Anuar Bin Mat Isa</td></tr>
+                            <tr class="bg-white"><td class="px-3 py-2 text-center font-bold">28</td><td class="px-3 py-2">En. Sukeran Bin Awang</td></tr>
+                            <tr class="bg-green-50/50"><td class="px-3 py-2 text-center font-bold">29</td><td class="px-3 py-2">Pn. Mazura Binti Mohd Nor</td></tr>
+                            <tr class="bg-white"><td class="px-3 py-2 text-center font-bold">30</td><td class="px-3 py-2">Tuan Haji Auza’i Bin Haji Mahamad</td></tr>
+                            <tr class="bg-green-50/50"><td class="px-3 py-2 text-center font-bold">31</td><td class="px-3 py-2">En. Muhammad Shahir Bin Mohamed Bakri</td></tr>
+                            <tr class="bg-white"><td class="px-3 py-2 text-center font-bold">32</td><td class="px-3 py-2">En. Khairul Anuar Bin Mat Isa</td></tr>
+                            <tr class="bg-green-50/50"><td class="px-3 py-2 text-center font-bold">33</td><td class="px-3 py-2">En. Sukeran Bin Awang</td></tr>
+                            <tr class="bg-white"><td class="px-3 py-2 text-center font-bold">34</td><td class="px-3 py-2">Pn. Mazura Binti Mohd Nor</td></tr>
+                            <tr class="bg-green-50/50"><td class="px-3 py-2 text-center font-bold">35</td><td class="px-3 py-2">En. Azizulfitri Bin Muslihat</td></tr>
+                            <tr class="bg-white"><td class="px-3 py-2 text-center font-bold">36</td><td class="px-3 py-2">En. Muhammad Shahir Bin Mohamed Bakri</td></tr>
+                            <tr class="bg-green-50/50"><td class="px-3 py-2 text-center font-bold">37</td><td class="px-3 py-2">En. Khairul Anuar Bin Mat Isa</td></tr>
+                            <tr class="bg-white"><td class="px-3 py-2 text-center font-bold">38</td><td class="px-3 py-2">En. Sukeran Bin Awang</td></tr>
+                            <tr class="bg-green-50/50"><td class="px-3 py-2 text-center font-bold">39</td><td class="px-3 py-2">Pn. Mazura Binti Mohd Nor</td></tr>
+                            <tr class="bg-white"><td class="px-3 py-2 text-center font-bold">40</td><td class="px-3 py-2">Tuan Haji Auza’i Bin Haji Mahamad</td></tr>
+                            <tr class="bg-green-50/50"><td class="px-3 py-2 text-center font-bold">41</td><td class="px-3 py-2">En. Muhammad Shahir Bin Mohamed Bakri</td></tr>
+                            <tr class="bg-white"><td class="px-3 py-2 text-center font-bold">42</td><td class="px-3 py-2">En. Khairul Anuar Bin Mat Isa</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- TAKWIM TAHUNAN 2026 (NEW - ALL COORDINATORS) -->
+            <div class="mt-6">
+                <h3 class="text-sm font-bold text-slate-700 mb-4 border-l-4 border-purple-500 pl-2">Takwim Program 2026</h3>
                 
-                <!-- Chart Bars -->
-                <div class="space-y-4">
-                    <div>
-                        <div class="flex justify-between text-sm mb-1">
-                            <span class="font-semibold text-slate-700">Tahap Penguasaan 6 (TP6)</span>
-                            <span class="text-emerald-600 font-bold">15%</span>
-                        </div>
-                        <div class="w-full bg-slate-100 rounded-full h-2.5">
-                            <div class="bg-emerald-600 h-2.5 rounded-full" style="width: 15%"></div>
-                        </div>
-                    </div>
-                     <div>
-                        <div class="flex justify-between text-sm mb-1">
-                            <span class="font-semibold text-slate-700">Tahap Penguasaan 5 (TP5)</span>
-                            <span class="text-emerald-500 font-bold">40%</span>
-                        </div>
-                        <div class="w-full bg-slate-100 rounded-full h-2.5">
-                            <div class="bg-emerald-500 h-2.5 rounded-full" style="width: 40%"></div>
-                        </div>
-                    </div>
-                     <div>
-                        <div class="flex justify-between text-sm mb-1">
-                            <span class="font-semibold text-slate-700">Tahap Penguasaan 4 (TP4)</span>
-                            <span class="text-emerald-400 font-bold">30%</span>
-                        </div>
-                        <div class="w-full bg-slate-100 rounded-full h-2.5">
-                            <div class="bg-emerald-400 h-2.5 rounded-full" style="width: 30%"></div>
-                        </div>
-                    </div>
-                     <div>
-                        <div class="flex justify-between text-sm mb-1">
-                            <span class="font-semibold text-slate-700">Tahap Penguasaan 3 (TP3)</span>
-                            <span class="text-yellow-400 font-bold">10%</span>
-                        </div>
-                        <div class="w-full bg-slate-100 rounded-full h-2.5">
-                            <div class="bg-yellow-400 h-2.5 rounded-full" style="width: 10%"></div>
-                        </div>
-                    </div>
-                     <div>
-                        <div class="flex justify-between text-sm mb-1">
-                            <span class="font-semibold text-slate-700">Tahap Penguasaan 1 & 2 (Intervensi)</span>
-                            <span class="text-red-500 font-bold">5%</span>
-                        </div>
-                        <div class="w-full bg-slate-100 rounded-full h-2.5">
-                            <div class="bg-red-500 h-2.5 rounded-full" style="width: 5%"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                <div class="relative space-y-6 pl-2">
+                    <div class="timeline-line"></div>
 
-            <div class="grid md:grid-cols-2 gap-6">
-                 <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-200 text-center">
-                    <div class="text-4xl text-emerald-600 mb-3"><i class="fas fa-file-excel"></i></div>
-                    <h3 class="font-bold text-slate-800">Analisis UPKK 2025</h3>
-                    <p class="text-sm text-slate-500 mb-4">Laporan lengkap keputusan UPKK</p>
-                    <button class="text-sm bg-slate-100 hover:bg-slate-200 text-slate-800 py-2 px-4 rounded transition">Muat Turun Excel</button>
-                 </div>
-                 <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-200 text-center">
-                    <div class="text-4xl text-blue-600 mb-3"><i class="fas fa-chart-pie"></i></div>
-                    <h3 class="font-bold text-slate-800">Post-Mortem Panitia</h3>
-                    <p class="text-sm text-slate-500 mb-4">Dapatan & cadangan penambahbaikan</p>
-                    <button class="text-sm bg-slate-100 hover:bg-slate-200 text-slate-800 py-2 px-4 rounded transition">Baca Laporan</button>
-                 </div>
+                    <!-- FEBRUARI -->
+                    <div class="timeline-item flex gap-4">
+                        <div class="w-12 pt-1 text-center flex-shrink-0 z-10 bg-slate-50">
+                            <span class="block text-xs font-bold text-purple-600 uppercase">Feb</span>
+                        </div>
+                        <div class="flex-1 space-y-3">
+                            <!-- Kad 1 -->
+                            <div class="bg-white p-4 rounded-xl shadow-sm border-l-4 border-purple-400 relative">
+                                <span class="absolute top-2 right-2 bg-green-100 text-green-800 text-[9px] font-bold px-1.5 py-0.5 rounded">Selesai</span>
+                                <h4 class="font-bold text-sm text-slate-800">Israk Mikraj</h4>
+                                <p class="text-[10px] text-slate-500 mb-1"><i class="far fa-calendar mr-1"></i> 16 Januari 2026</p>
+                                <div class="flex flex-wrap gap-1 mt-2">
+                                    <span class="text-[9px] bg-slate-100 px-2 py-1 rounded text-slate-600">Ustaz Auza'i (Penyelaras)</span>
+                                    <span class="text-[9px] bg-slate-100 px-2 py-1 rounded text-slate-600">Ustaz Sukeran (Pen. Penyelaras)</span>
+                                </div>
+                            </div>
+                            <!-- Kad 2 -->
+                            <div class="bg-white p-4 rounded-xl shadow-sm border-l-4 border-purple-400">
+                                <h4 class="font-bold text-sm text-slate-800">Pelancaran Ihya’ Ramadan</h4>
+                                <p class="text-[10px] text-slate-500 mb-1"><i class="far fa-calendar mr-1"></i> 13 Februari 2026</p>
+                                <div class="flex flex-wrap gap-1 mt-2">
+                                    <span class="text-[9px] bg-slate-100 px-2 py-1 rounded text-slate-600">Ustaz Shahir</span>
+                                    <span class="text-[9px] bg-slate-100 px-2 py-1 rounded text-slate-600">Ustaz Anuar</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- MAC -->
+                    <div class="timeline-item flex gap-4">
+                        <div class="w-12 pt-1 text-center flex-shrink-0 z-10 bg-slate-50">
+                            <span class="block text-xs font-bold text-blue-600 uppercase">Mac</span>
+                        </div>
+                        <div class="flex-1 space-y-3">
+                            <div class="bg-white p-4 rounded-xl shadow-sm border-l-4 border-blue-400">
+                                <h4 class="font-bold text-sm text-slate-800">Nuzul Al-Quran & Iftar</h4>
+                                <p class="text-[10px] text-slate-500 mb-1"><i class="far fa-calendar mr-1"></i> 6 Mac 2026</p>
+                                <div class="flex flex-wrap gap-1 mt-2">
+                                    <span class="text-[9px] bg-slate-100 px-2 py-1 rounded text-slate-600">Ustaz Sukeran</span>
+                                    <span class="text-[9px] bg-slate-100 px-2 py-1 rounded text-slate-600">Ustaz Auza'i</span>
+                                </div>
+                            </div>
+                            <div class="bg-white p-4 rounded-xl shadow-sm border-l-4 border-blue-400">
+                                <h4 class="font-bold text-sm text-slate-800">Iftar Perdana</h4>
+                                <p class="text-[10px] text-slate-500 mb-1"><i class="far fa-calendar mr-1"></i> 6 Mac 2026</p>
+                                <div class="flex flex-wrap gap-1 mt-2">
+                                    <span class="text-[9px] bg-slate-100 px-2 py-1 rounded text-slate-600">Ustaz Shahir</span>
+                                    <span class="text-[9px] bg-slate-100 px-2 py-1 rounded text-slate-600">Ustaz Anuar</span>
+                                </div>
+                            </div>
+                            <div class="bg-white p-4 rounded-xl shadow-sm border-l-4 border-blue-400">
+                                <h4 class="font-bold text-sm text-slate-800">Penutupan Ihya’ Ramadan</h4>
+                                <p class="text-[10px] text-slate-500 mb-1"><i class="far fa-calendar mr-1"></i> 18 Mac 2026</p>
+                                <div class="flex flex-wrap gap-1 mt-2">
+                                    <span class="text-[9px] bg-slate-100 px-2 py-1 rounded text-slate-600">Ustaz Anuar</span>
+                                    <span class="text-[9px] bg-slate-100 px-2 py-1 rounded text-slate-600">Ustaz Shahir</span>
+                                </div>
+                            </div>
+                             <div class="bg-white p-4 rounded-xl shadow-sm border-l-4 border-blue-400">
+                                <h4 class="font-bold text-sm text-slate-800">Khatam Al-Quran</h4>
+                                <p class="text-[10px] text-slate-500 mb-1"><i class="far fa-calendar mr-1"></i> 18 Mac 2026</p>
+                                <div class="flex flex-wrap gap-1 mt-2">
+                                    <span class="text-[9px] bg-slate-100 px-2 py-1 rounded text-slate-600">Ustaz Sukeran</span>
+                                    <span class="text-[9px] bg-slate-100 px-2 py-1 rounded text-slate-600">Ustazah Mazura</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- APRIL - MEI -->
+                    <div class="timeline-item flex gap-4">
+                        <div class="w-12 pt-1 text-center flex-shrink-0 z-10 bg-slate-50">
+                            <span class="block text-xs font-bold text-gray-500 uppercase">Apr-Mei</span>
+                        </div>
+                        <div class="flex-1 space-y-3">
+                            <div class="bg-white p-4 rounded-xl shadow-sm border-l-4 border-gray-400">
+                                <h4 class="font-bold text-sm text-slate-800">Latihan Mahrajan</h4>
+                                <div class="flex items-center gap-2 mt-2">
+                                    <span class="text-[9px] bg-slate-100 px-2 py-1 rounded text-slate-600 font-bold">SEMUA GURU PAI</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- JUN -->
+                    <div class="timeline-item flex gap-4">
+                        <div class="w-12 pt-1 text-center flex-shrink-0 z-10 bg-slate-50">
+                            <span class="block text-xs font-bold text-orange-600 uppercase">Jun</span>
+                        </div>
+                        <div class="flex-1 space-y-3">
+                            <div class="bg-white p-4 rounded-xl shadow-sm border-l-4 border-orange-400">
+                                <h4 class="font-bold text-sm text-slate-800">Kem Cemerlang Jawi</h4>
+                                <p class="text-[10px] text-slate-500 mb-1"><i class="far fa-calendar mr-1"></i> 9 Jun 2026</p>
+                                <div class="flex flex-wrap gap-1 mt-2">
+                                    <span class="text-[9px] bg-slate-100 px-2 py-1 rounded text-slate-600">Ustazah Mazura</span>
+                                    <span class="text-[9px] bg-slate-100 px-2 py-1 rounded text-slate-600">Ustaz Azizul</span>
+                                </div>
+                            </div>
+                             <div class="bg-white p-4 rounded-xl shadow-sm border-l-4 border-orange-400">
+                                <h4 class="font-bold text-sm text-slate-800">Maal Hijrah</h4>
+                                <p class="text-[10px] text-slate-500 mb-1"><i class="far fa-calendar mr-1"></i> 17 Jun 2026</p>
+                                <div class="flex flex-wrap gap-1 mt-2">
+                                    <span class="text-[9px] bg-slate-100 px-2 py-1 rounded text-slate-600">Ustaz Sukeran</span>
+                                    <span class="text-[9px] bg-slate-100 px-2 py-1 rounded text-slate-600">Ustaz Auza'i</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- JULAI -->
+                    <div class="timeline-item flex gap-4">
+                        <div class="w-12 pt-1 text-center flex-shrink-0 z-10 bg-slate-50">
+                            <span class="block text-xs font-bold text-red-600 uppercase">Jul</span>
+                        </div>
+                        <div class="flex-1 space-y-3">
+                            <div class="bg-white p-4 rounded-xl shadow-sm border-l-4 border-red-400">
+                                <h4 class="font-bold text-sm text-slate-800">Simulasi Haji Cilik</h4>
+                                <p class="text-[10px] text-slate-500 mb-1"><i class="far fa-calendar mr-1"></i> 14 Julai 2026</p>
+                                <div class="flex flex-wrap gap-1 mt-2">
+                                    <span class="text-[9px] bg-slate-100 px-2 py-1 rounded text-slate-600">Ustaz Shahir</span>
+                                    <span class="text-[9px] bg-slate-100 px-2 py-1 rounded text-slate-600">Ustaz Auza'i</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- OGOS -->
+                    <div class="timeline-item flex gap-4">
+                        <div class="w-12 pt-1 text-center flex-shrink-0 z-10 bg-slate-50">
+                            <span class="block text-xs font-bold text-teal-600 uppercase">Ogos</span>
+                        </div>
+                        <div class="flex-1 space-y-3">
+                            <div class="bg-white p-4 rounded-xl shadow-sm border-l-4 border-teal-400">
+                                <h4 class="font-bold text-sm text-slate-800">Sambutan Maulidur Rasul</h4>
+                                <p class="text-[10px] text-slate-500 mb-1"><i class="far fa-calendar mr-1"></i> 26 Ogos 2026</p>
+                                <div class="flex flex-wrap gap-1 mt-2">
+                                    <span class="text-[9px] bg-slate-100 px-2 py-1 rounded text-slate-600">Ustazah Sukeran</span>
+                                    <span class="text-[9px] bg-slate-100 px-2 py-1 rounded text-slate-600">Ustaz Sukeran</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SEPTEMBER -->
+                    <div class="timeline-item flex gap-4">
+                        <div class="w-12 pt-1 text-center flex-shrink-0 z-10 bg-slate-50">
+                            <span class="block text-xs font-bold text-green-600 uppercase">Sep</span>
+                        </div>
+                        <div class="flex-1 space-y-3">
+                            <div class="bg-white p-4 rounded-xl shadow-sm border-l-4 border-green-400">
+                                <h4 class="font-bold text-sm text-slate-800">Kem Bestari Solat (Siri 1)</h4>
+                                <p class="text-[10px] text-slate-500 mb-1"><i class="far fa-calendar mr-1"></i> 12 Sept 2026</p>
+                                <div class="flex flex-wrap gap-1 mt-2">
+                                    <span class="text-[9px] bg-slate-100 px-2 py-1 rounded text-slate-600">Ustazah Mazura</span>
+                                    <span class="text-[9px] bg-slate-100 px-2 py-1 rounded text-slate-600">Ustaz Shahir</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- OKTOBER -->
+                    <div class="timeline-item flex gap-4">
+                        <div class="w-12 pt-1 text-center flex-shrink-0 z-10 bg-slate-50">
+                            <span class="block text-xs font-bold text-pink-600 uppercase">Okt</span>
+                        </div>
+                        <div class="flex-1 space-y-3">
+                            <div class="bg-white p-4 rounded-xl shadow-sm border-l-4 border-pink-400">
+                                <h4 class="font-bold text-sm text-slate-800">Kem Bestari Solat (Siri 2)</h4>
+                                <p class="text-[10px] text-slate-500 mb-1"><i class="far fa-calendar mr-1"></i> Oktober 2026</p>
+                                <div class="flex flex-wrap gap-1 mt-2">
+                                    <span class="text-[9px] bg-slate-100 px-2 py-1 rounded text-slate-600">Ustaz Azizul</span>
+                                    <span class="text-[9px] bg-slate-100 px-2 py-1 rounded text-slate-600">Ustaz Anuar</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
             </div>
         </section>
 
-        <!-- Section: Eviden -->
-        <section id="eviden" class="tab-content hidden fade-in">
-            <div class="mb-6">
-                <h2 class="text-2xl font-bold text-emerald-900 mb-2">Eviden & Dokumentasi</h2>
-                <p class="text-slate-500">Pusat sehenti gambar, video dan bahan bercetak.</p>
+        <!-- Section: ADNI -->
+        <section id="adni" class="tab-content hidden fade-in">
+            <div class="mb-4">
+                <h2 class="text-xl font-bold text-emerald-900">Jurulatih ADNI</h2>
+                <p class="text-xs text-slate-500">Pasukan Sekolah 2026</p>
             </div>
 
-            <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
-                <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 p-6">
-                    <!-- File Item -->
-                    <div class="text-center group cursor-pointer">
-                        <i class="fas fa-image text-4xl text-purple-500 mb-2 group-hover:scale-110 transition"></i>
-                        <p class="text-xs text-slate-600 truncate">Minggu Arab.jpg</p>
+            <div class="space-y-4">
+                <!-- MQSS Card -->
+                <div class="bg-white rounded-xl shadow-sm overflow-hidden">
+                    <div class="bg-emerald-50 p-3 border-b border-emerald-100 flex items-center">
+                        <i class="fas fa-quran text-emerald-600 mr-2"></i>
+                        <h3 class="font-bold text-emerald-900 text-sm">MQSS (Al-Quran)</h3>
                     </div>
-                    <div class="text-center group cursor-pointer">
-                        <i class="fas fa-image text-4xl text-purple-500 mb-2 group-hover:scale-110 transition"></i>
-                        <p class="text-xs text-slate-600 truncate">Majlis Tilawah.png</p>
-                    </div>
-                    <div class="text-center group cursor-pointer">
-                        <i class="fas fa-file-pdf text-4xl text-red-500 mb-2 group-hover:scale-110 transition"></i>
-                        <p class="text-xs text-slate-600 truncate">Laporan_Jan.pdf</p>
-                    </div>
-                    <div class="text-center group cursor-pointer">
-                        <i class="fas fa-video text-4xl text-pink-500 mb-2 group-hover:scale-110 transition"></i>
-                        <p class="text-xs text-slate-600 truncate">Montaj_Raya.mp4</p>
-                    </div>
-                    <div class="text-center group cursor-pointer">
-                        <i class="fas fa-folder text-4xl text-yellow-400 mb-2 group-hover:scale-110 transition"></i>
-                        <p class="text-xs text-slate-600 truncate">Gambar 2025</p>
-                    </div>
-                    <div class="text-center group cursor-pointer flex flex-col items-center justify-center border-2 border-dashed border-slate-300 rounded-lg h-full min-h-[80px] hover:bg-slate-50">
-                        <i class="fas fa-plus text-slate-400"></i>
-                        <span class="text-[10px] text-slate-400 mt-1">Upload</span>
+                    <div class="p-4 grid grid-cols-2 gap-2">
+                        <div class="bg-slate-50 p-2 rounded">
+                            <p class="text-[10px] text-slate-400 uppercase">Tilawah (L)</p>
+                            <p class="text-xs font-bold">Ustaz Auza'i</p>
+                        </div>
+                        <div class="bg-slate-50 p-2 rounded">
+                            <p class="text-[10px] text-slate-400 uppercase">Tilawah (P)</p>
+                            <p class="text-xs font-bold">Ustazah Mazura</p>
+                        </div>
+                         <div class="bg-slate-50 p-2 rounded">
+                            <p class="text-[10px] text-slate-400 uppercase">Hafazan (L)</p>
+                            <p class="text-xs font-bold">Ustaz Shahir</p>
+                        </div>
+                         <div class="bg-slate-50 p-2 rounded">
+                            <p class="text-[10px] text-slate-400 uppercase">Hafazan (P)</p>
+                            <p class="text-xs font-bold">Ustazah Shahir</p>
+                        </div>
                     </div>
                 </div>
-                <div class="bg-slate-50 p-4 border-t text-center">
-                    <button class="text-sm text-emerald-700 font-semibold hover:underline">
-                        Buka Google Drive Penuh <i class="fas fa-external-link-alt ml-1"></i>
+
+                <!-- ILSS Card -->
+                <div class="bg-white rounded-xl shadow-sm overflow-hidden">
+                    <div class="bg-blue-50 p-3 border-b border-blue-100 flex items-center">
+                        <i class="fas fa-language text-blue-600 mr-2"></i>
+                        <h3 class="font-bold text-blue-900 text-sm">ILSS (B.Arab)</h3>
+                    </div>
+                    <div class="p-4">
+                        <div class="flex items-center justify-between mb-2 border-b pb-2">
+                            <span class="text-xs text-slate-500">Daie Cilik</span>
+                            <span class="text-xs font-bold text-slate-800">Ustaz Khairul Anuar</span>
+                        </div>
+                         <div class="flex items-center justify-between">
+                            <span class="text-xs text-slate-500">Kalam Arabiy</span>
+                            <span class="text-xs font-bold text-slate-800">Ustaz Sukeran</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FNKSS Card -->
+                <div class="bg-white rounded-xl shadow-sm overflow-hidden">
+                    <div class="bg-purple-50 p-3 border-b border-purple-100 flex items-center">
+                        <i class="fas fa-music text-purple-600 mr-2"></i>
+                        <h3 class="font-bold text-purple-900 text-sm">FNKSS (Nasyid & Khat)</h3>
+                    </div>
+                    <div class="p-4">
+                        <div class="flex items-center justify-between mb-2 border-b pb-2">
+                            <span class="text-xs text-slate-500">Nasyid (Terbuka)</span>
+                            <span class="text-xs font-bold text-slate-800">Ustazah Fadilah</span>
+                        </div>
+                         <div class="flex items-center justify-between mb-2 border-b pb-2">
+                            <span class="text-xs text-slate-500">Khat (L)</span>
+                            <span class="text-xs font-bold text-slate-800">Ustaz Sukeran</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs text-slate-500">Khat (P)</span>
+                            <span class="text-xs font-bold text-slate-800">Ustazah Mazura</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- NEW SECTION: AI PANITIA -->
+        <section id="ai" class="tab-content hidden fade-in">
+            <div class="mb-4">
+                <h2 class="text-xl font-bold text-emerald-900 flex items-center">
+                    <i class="fas fa-robot mr-2 text-yellow-500"></i> AI Panitia
+                </h2>
+                <p class="text-xs text-slate-500">Bantuan Pintar Gemini untuk Guru & Panitia</p>
+            </div>
+
+            <!-- Feature 1: Tazkirah Generator -->
+            <div class="bg-white p-5 rounded-xl shadow-sm border border-slate-200 mb-6 relative overflow-hidden">
+                <div class="absolute -top-6 -right-6 w-20 h-20 bg-emerald-100 rounded-full flex items-center justify-center opacity-50">
+                    <i class="fas fa-mosque text-4xl text-emerald-300 mt-5 ml-2"></i>
+                </div>
+                
+                <h3 class="font-bold text-emerald-800 mb-2 flex items-center">
+                    <i class="fas fa-microphone-alt mr-2"></i> Ustaz AI: Penjana Tazkirah
+                </h3>
+                <p class="text-xs text-slate-500 mb-4">Jana teks tazkirah ringkas untuk perhimpunan pagi atau minggu bertugas.</p>
+                
+                <div class="space-y-3">
+                    <div>
+                        <label class="text-[10px] font-bold text-slate-600 uppercase">Topik Tazkirah</label>
+                        <input type="text" id="tazkirahTopic" placeholder="Contoh: Sabar, Adab Guru, Ramadhan..." class="w-full mt-1 p-3 text-sm border border-slate-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none transition">
+                    </div>
+                    <button onclick="generateTazkirah()" id="btnTazkirah" class="w-full bg-gradient-to-r from-emerald-600 to-emerald-500 text-white py-3 rounded-lg text-sm font-bold shadow-md hover:shadow-lg transition transform active:scale-95 flex items-center justify-center gap-2">
+                        <i class="fas fa-magic"></i> Jana Tazkirah ✨
                     </button>
                 </div>
+
+                <!-- Result Area -->
+                <div id="resultTazkirah" class="hidden mt-4 p-4 bg-emerald-50 rounded-lg border border-emerald-100 text-sm text-slate-700 markdown-body">
+                    <!-- Content will be injected here -->
+                </div>
+                <div id="loadingTazkirah" class="hidden mt-4 text-center py-4">
+                    <i class="fas fa-circle-notch fa-spin text-emerald-600 text-xl"></i>
+                    <p class="text-xs text-slate-500 mt-2">Sedang menulis tazkirah...</p>
+                </div>
+            </div>
+
+            <!-- Feature 2: RPH Activity Generator -->
+            <div class="bg-white p-5 rounded-xl shadow-sm border border-slate-200 mb-6 relative overflow-hidden">
+                <div class="absolute -top-6 -right-6 w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center opacity-50">
+                    <i class="fas fa-lightbulb text-4xl text-blue-300 mt-5 ml-2"></i>
+                </div>
+
+                <h3 class="font-bold text-blue-800 mb-2 flex items-center">
+                    <i class="fas fa-chalkboard-teacher mr-2"></i> Cikgu AI: Idea Aktiviti PdP
+                </h3>
+                <p class="text-xs text-slate-500 mb-4">Dapatkan cadangan aktiviti menarik untuk RPH anda.</p>
+                
+                <div class="space-y-3">
+                    <div>
+                        <label class="text-[10px] font-bold text-slate-600 uppercase">Standard Kandungan / Tajuk</label>
+                        <input type="text" id="rphTopic" placeholder="Contoh: Rukun Iman, Puasa, Jawi..." class="w-full mt-1 p-3 text-sm border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition">
+                    </div>
+                    <button onclick="generateRPH()" id="btnRPH" class="w-full bg-gradient-to-r from-blue-600 to-blue-500 text-white py-3 rounded-lg text-sm font-bold shadow-md hover:shadow-lg transition transform active:scale-95 flex items-center justify-center gap-2">
+                        <i class="fas fa-lightbulb"></i> Cadangkan Aktiviti ✨
+                    </button>
+                </div>
+
+                 <!-- Result Area -->
+                <div id="resultRPH" class="hidden mt-4 p-4 bg-blue-50 rounded-lg border border-blue-100 text-sm text-slate-700 markdown-body">
+                    <!-- Content will be injected here -->
+                </div>
+                <div id="loadingRPH" class="hidden mt-4 text-center py-4">
+                    <i class="fas fa-circle-notch fa-spin text-blue-600 text-xl"></i>
+                    <p class="text-xs text-slate-500 mt-2">Sedang memikirkan idea...</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Analisis & Eviden (Simple Placeholders) -->
+        <section id="analisis" class="tab-content hidden fade-in">
+            <div class="flex flex-col items-center justify-center h-64 bg-white rounded-xl border border-dashed border-slate-300">
+                <i class="fas fa-chart-bar text-4xl text-slate-300 mb-2"></i>
+                <p class="text-sm text-slate-400">Dashboard Analisis Mobile</p>
+            </div>
+        </section>
+
+        <section id="eviden" class="tab-content hidden fade-in">
+             <div class="flex flex-col items-center justify-center h-64 bg-white rounded-xl border border-dashed border-slate-300">
+                <i class="fas fa-images text-4xl text-slate-300 mb-2"></i>
+                <p class="text-sm text-slate-400">Galeri Eviden</p>
             </div>
         </section>
 
     </main>
 
-    <!-- Footer -->
-    <footer class="bg-slate-800 text-slate-400 py-8 mt-auto">
-        <div class="container mx-auto px-4 text-center">
-            <div class="mb-4">
-                <i class="fas fa-school text-2xl text-slate-500 mb-2"></i>
-                <h5 class="text-white font-bold">SK FELDA JENGKA 16</h5>
-                <p class="text-xs">Melahirkan Generasi Cemerlang Dunia & Akhirat</p>
-            </div>
-            <div class="border-t border-slate-700 pt-4 flex flex-col md:flex-row justify-center items-center gap-4 text-xs">
-                <p>&copy; 2026 Panitia Pendidikan Islam. Hak Cipta Terpelihara.</p>
-                <div class="flex gap-4">
-                    <a href="#" class="hover:text-white transition">Portal KPM</a>
-                    <a href="#" class="hover:text-white transition">e-Operasi</a>
-                    <a href="#" class="hover:text-white transition">SSDM</a>
-                </div>
-            </div>
+    <!-- MOBILE BOTTOM NAVIGATION (The App Feel) -->
+    <nav class="md:hidden fixed bottom-0 left-0 right-0 bg-white border-t border-slate-200 z-50 h-[80px] pb-5">
+        <div class="flex overflow-x-auto no-scrollbar items-center h-full px-2 gap-2">
+            
+            <button onclick="switchTab('maklumat')" id="btn-maklumat" class="nav-btn mobile-nav-active flex-shrink-0 flex flex-col items-center justify-center w-16 h-full text-slate-400 transition">
+                <i class="fas fa-info-circle text-lg mb-1"></i>
+                <span class="text-[9px] font-medium">Info</span>
+            </button>
+
+            <button onclick="switchTab('pengurusan')" id="btn-pengurusan" class="nav-btn flex-shrink-0 flex flex-col items-center justify-center w-16 h-full text-slate-400 transition">
+                <i class="fas fa-briefcase text-lg mb-1"></i>
+                <span class="text-[9px] font-medium">Fail</span>
+            </button>
+
+            <button onclick="switchTab('kurikulum')" id="btn-kurikulum" class="nav-btn flex-shrink-0 flex flex-col items-center justify-center w-16 h-full text-slate-400 transition">
+                <i class="fas fa-chalkboard-teacher text-lg mb-1"></i>
+                <span class="text-[9px] font-medium">PdP</span>
+            </button>
+
+             <button onclick="switchTab('aktiviti')" id="btn-aktiviti" class="nav-btn flex-shrink-0 flex flex-col items-center justify-center w-16 h-full text-slate-400 transition">
+                <i class="fas fa-calendar-alt text-lg mb-1"></i>
+                <span class="text-[9px] font-medium">Jadual</span>
+            </button>
+
+            <!-- AI BUTTON (MOBILE) -->
+            <button onclick="switchTab('ai')" id="btn-ai" class="nav-btn flex-shrink-0 flex flex-col items-center justify-center w-16 h-full text-slate-400 transition">
+                <i class="fas fa-sparkles text-lg mb-1 text-yellow-500"></i>
+                <span class="text-[9px] font-medium text-yellow-600">AI</span>
+            </button>
+
+            <button onclick="switchTab('adni')" id="btn-adni" class="nav-btn flex-shrink-0 flex flex-col items-center justify-center w-16 h-full text-slate-400 transition">
+                <i class="fas fa-trophy text-lg mb-1"></i>
+                <span class="text-[9px] font-medium">ADNI</span>
+            </button>
+
+             <button onclick="switchTab('analisis')" id="btn-analisis" class="nav-btn flex-shrink-0 flex flex-col items-center justify-center w-16 h-full text-slate-400 transition">
+                <i class="fas fa-chart-line text-lg mb-1"></i>
+                <span class="text-[9px] font-medium">Analisis</span>
+            </button>
+            
+             <button onclick="switchTab('eviden')" id="btn-eviden" class="nav-btn flex-shrink-0 flex flex-col items-center justify-center w-16 h-full text-slate-400 transition">
+                <i class="fas fa-camera text-lg mb-1"></i>
+                <span class="text-[9px] font-medium">Eviden</span>
+            </button>
+            
+            <div class="w-2 flex-shrink-0"></div>
         </div>
-    </footer>
+    </nav>
 
     <script>
         function switchTab(tabId) {
-            // Hide all contents
-            document.querySelectorAll('.tab-content').forEach(el => {
-                el.classList.add('hidden');
-            });
+            // 1. Hide all contents
+            document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
             
-            // Show selected content
+            // 2. Show selected content
             document.getElementById(tabId).classList.remove('hidden');
 
-            // Reset nav buttons
+            // 3. Reset Mobile Nav Buttons
             document.querySelectorAll('.nav-btn').forEach(btn => {
-                btn.classList.remove('nav-active');
-                btn.classList.remove('text-emerald-100');
+                btn.classList.remove('mobile-nav-active');
+                btn.classList.remove('text-emerald-700');
+                btn.classList.add('text-slate-400');
+                // Special reset for AI button
+                if(btn.id === 'btn-ai') {
+                     btn.querySelector('span').classList.remove('font-bold');
+                }
             });
 
-            // Activate selected button
+            // 4. Activate Selected Mobile Button
             const activeBtn = document.getElementById('btn-' + tabId);
-            activeBtn.classList.add('nav-active');
-            activeBtn.classList.remove('text-emerald-100');
+            if(activeBtn) {
+                activeBtn.classList.add('mobile-nav-active');
+                activeBtn.classList.remove('text-slate-400');
+                if (tabId === 'ai') {
+                    // Keep AI button special color
+                } else {
+                    activeBtn.classList.add('text-emerald-700');
+                }
+                
+                // Auto scroll the nav into view (Horizontal scroll)
+                activeBtn.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+            }
+            
+            // 5. Scroll to top of content
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // --- GEMINI API LOGIC ---
+        const apiKey = ""; // API key akan diisi oleh sistem secara automatik
+
+        async function generateTazkirah() {
+            const topic = document.getElementById('tazkirahTopic').value;
+            if (!topic) {
+                alert("Sila masukkan topik tazkirah dahulu.");
+                return;
+            }
+
+            // UI Loading State
+            document.getElementById('loadingTazkirah').classList.remove('hidden');
+            document.getElementById('resultTazkirah').classList.add('hidden');
+            document.getElementById('btnTazkirah').disabled = true;
+
+            const prompt = `Anda adalah Ustaz AI pembantu guru Pendidikan Islam. Tuliskan teks tazkirah ringkas (sekitar 100-150 patah perkataan) mengenai topik: "${topic}".
+            
+            Format:
+            1. Mulakan dengan salam.
+            2. Isi utama yang sesuai untuk murid sekolah rendah.
+            3. Sertakan satu dalil Al-Quran atau Hadis ringkas (terjemahan).
+            4. Penutup dengan doa ringkas.
+            
+            Gunakan bahasa Melayu yang mesra murid.`;
+
+            try {
+                const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ contents: [{ parts: [{ text: prompt }] }] })
+                });
+                
+                const data = await response.json();
+                const text = data.candidates[0].content.parts[0].text;
+                
+                // Render Markdown
+                document.getElementById('resultTazkirah').innerHTML = marked.parse(text);
+                document.getElementById('resultTazkirah').classList.remove('hidden');
+
+            } catch (error) {
+                console.error("Error:", error);
+                alert("Maaf, gagal menjana tazkirah. Sila cuba lagi.");
+            } finally {
+                document.getElementById('loadingTazkirah').classList.add('hidden');
+                document.getElementById('btnTazkirah').disabled = false;
+            }
+        }
+
+        async function generateRPH() {
+            const topic = document.getElementById('rphTopic').value;
+            if (!topic) {
+                alert("Sila masukkan topik pelajaran dahulu.");
+                return;
+            }
+
+            // UI Loading State
+            document.getElementById('loadingRPH').classList.remove('hidden');
+            document.getElementById('resultRPH').classList.add('hidden');
+            document.getElementById('btnRPH').disabled = true;
+
+            const prompt = `Anda adalah Cikgu AI yang kreatif. Berikan 3 cadangan aktiviti PdP (Pengajaran dan Pembelajaran) yang menarik untuk murid sekolah rendah bagi topik Pendidikan Islam: "${topic}".
+            
+            Format output:
+            Berikan dalam bentuk 'bullet points'.
+            Untuk setiap aktiviti, nyatakan:
+            - Nama Aktiviti (yang menarik)
+            - Cara Pelaksanaan ringkas
+            - Bahan Bantu Mengajar (BBM) yang diperlukan.`;
+
+            try {
+                const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ contents: [{ parts: [{ text: prompt }] }] })
+                });
+                
+                const data = await response.json();
+                const text = data.candidates[0].content.parts[0].text;
+                
+                // Render Markdown
+                document.getElementById('resultRPH').innerHTML = marked.parse(text);
+                document.getElementById('resultRPH').classList.remove('hidden');
+
+            } catch (error) {
+                console.error("Error:", error);
+                alert("Maaf, gagal menjana idea RPH. Sila cuba lagi.");
+            } finally {
+                document.getElementById('loadingRPH').classList.add('hidden');
+                document.getElementById('btnRPH').disabled = false;
+            }
         }
     </script>
 </body>
